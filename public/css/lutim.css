@@ -1,20 +1,41 @@
-@media (max-width: 767px) {
-    body {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
+body {
+    background:#eee;
+}
+h1 {
+    font-family: "DejaVu Sans",Verdana,Geneva,sans-serif !important;
+    font-size: 48px;
+    font-weight: bold;
+}
+.lead {
+    font-style:italic;
+}
+.container.ombre {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 30px;
 }
 
-@media (min-width: 768px) {
-    body {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+img.ombre {
+    width:85%;
+    margin:20px;
 }
 
-.container {
-    padding: 15px;
-    margin: 0 auto;
+#tuto-faq p[role="presentation"] .glyphicon,
+#le-logiciel p[role="presentation"] .glyphicon,
+#jardin p[role="presentation"] .glyphicon {
+    font-size:50px;
+}
+
+#expiration, #burnafterreading {
+    height:36px;
+    margin-top:15px;
+}
+#expiration label {
+    font-weight: normal;
+}
+
+#send-files, #send-url {
+    margin-top:15px;
 }
 
 .jsonly {

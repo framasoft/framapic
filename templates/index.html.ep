@@ -1,8 +1,6 @@
 % # vim:set sw=4 ts=4 sts=4 ft=html.epl expandtab:
+
 <div class="messages">
-% if (config('always_encrypt')) {
-    <p><%=l 'always_encrypt' %></p>
-% }
 % if (defined(stash('short'))) {
     <div class="alert alert-success">
 %     if (defined(stash('short'))) {
@@ -15,10 +13,10 @@
             &nbsp;&nbsp;&nbsp;<a target="_blank" class="btn btn-default btn-primary btn-xs" href="https://twitter.com/share?url=<%= $url %>?t"><%=l 'tweet_it' %></a>
             <ul class="list-unstyled">
                 % my $delete_url = url_for('delete', {short => stash('real_short'), token => stash('token')})->to_abs();
-                <li><i class="icon icon-eye"      title =" <%= l 'view-link' %>"></i>     <%= link_to $url        => begin %> <%= $url %>        <%= end %></li>
-                <li><i class="icon icon-download" title =" <%= l 'download-link' %>"></i> <%= link_to $url.'?dl'  => begin %> <%= $url.'?dl' %>  <%= end %></li>
-                <li><i class="icon icon-share"    title =" <%= l 'share-link' %>"></i>    <%= link_to $url.'?t'   => begin %> <%= $url.'?t' %>   <%= end %></li>
-                <li><i class="icon icon-trash"    title =" <%= l 'delete-link' %>"></i>   <%= link_to $delete_url => begin %> <%= $delete_url %> <%= end %></li>
+                <li><i class="icon icon-eye"></i>      <span class="sr-only"> <%= l 'view-link' %></span>       <%= link_to $url        => begin %> <%= $url %>        title =" <%= l 'view-link' %>"      <%= end %></li>
+                <li><i class="icon icon-download"></i> <span class="sr-only"> <%= l 'download-link' %>"></span> <%= link_to $url.'?dl'  => begin %> <%= $url.'?dl' %>  title =" <%= l 'download-link' %>"  <%= end %></li>
+                <li><i class="icon icon-share"></i>    <span class="sr-only"> <%= l 'share-link' %>"></span>    <%= link_to $url.'?t'   => begin %> <%= $url.'?t' %>   title =" <%= l 'share-link' %>"     <%= end %></li>
+                <li><i class="icon icon-trash"></i>    <span class="sr-only"> <%= l 'delete-link' %>"></span>   <%= link_to $delete_url => begin %> <%= $delete_url %> title =" <%= l 'delete-link' %>"    <%= end %></li>
             </ul>
         </div>
 % # Delay modification form
@@ -123,57 +121,86 @@
 
 <!-- D&D Zone-->
 <div class="jsonly">
-    <div class="form-group form-inline">
-        <select id="delete-day" class="form-control">
-            % for my $delay (qw/0 1 7 30 365/) {
-            %   my $text = ($delay == 7 || $delay == 30) ? l('delay_days', $delay) : l("delay_$delay");
-            %   if (config('max_delay')) {
-            %       if ($delay) {
-            %           if ($delay < config('max_delay')) {
-                            <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-            %           } elsif ($delay == config('max_delay')) {
-                            <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-            %               last;
-            %           } else {
-            %               my $text = ($delay == 1) ? l('delay_1') : l('delay_days', $delay);
-                            <option value="<%= config('max_delay') %>" <%== is_selected(config('max_delay')) %>><%=l('delay_days', config('max_delay')) %></option>
-            %               last;
-            %           }
-            %       }
-            %   } else {
-                    <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-            %   }
-            % }
-        </select>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="first-view"> <%=l 'delete-first' %>
-            </label>
+    <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#send-files" aria-controls="send-files" role="tab" data-toggle="tab">Envoyer des fichiers</a></li>
+            <li role="presentation"><a href="#send-url" aria-controls="profile" role="tab" data-toggle="tab">Envoyer depuis une URL</a></li>
+        </ul>
+
+        <div class="form-group form-inline">
+            <div class="btn btn-default" id="expiration">
+                <label for="delete-day">Expiration</label>
+                <select id="delete-day" class="">
+                % for my $delay (qw/0 1 7 30 365/) {
+                %   my $text = ($delay == 7 || $delay == 30) ? l('delay_days', $delay) : l("delay_$delay");
+                %   if (config('max_delay')) {
+                %       if ($delay) {
+                %           if ($delay < config('max_delay')) {
+                                <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
+                %           } elsif ($delay == config('max_delay')) {
+                                <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
+                %               last;
+                %           } else {
+                %               my $text = ($delay == 1) ? l('delay_1') : l('delay_days', $delay);
+                                <option value="<%= config('max_delay') %>" <%== is_selected(config('max_delay')) %>><%=l('delay_days', config('max_delay')) %></option>
+                %               last;
+                %           }
+                %       }
+                %   } else {
+                        <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
+                %   }
+                % }
+                </select>
+            </div>
+            <div class="btn btn-default" id="burnafterreading">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="first-view"> <%=l 'delete-first' %>
+                    </label>
+                </div>
+            </div>
             <label <%== (config('always_encrypt')) ? 'class="always-encrypt"' : '' %>>
                 <input type="checkbox" id="crypt"> <%=l 'crypt_image' %>
             </label>
         </div>
-    </div>
-    <div id="drag-and-drop-zone" class="uploader">
-        <div><%=l 'drag-n-drop' %></div>
-        <div class="or"><%=l 'or' %></div>
-        <div class="browser">
-            <label>
-                <span><%=l 'file-browser' %></span>
-                <input type="file" name="files[]" multiple="multiple" title='<%=l 'file-browser' %>' accept="image/*">
-            </label>
-        </div>
-    </div>
-    <p class="help-block"><%=l 'image-only' %></p>
-    <form class="form-horizontal" role="form" method="POST" action="<%== url_for('add') %>">
-        <div class="form-group">
-            <span class="col-sm-3 col-xs-12"><span class="hidden-spin" style="font-size:200%; display:none;" > <i class="icon-spinner animate-spin pull-right"></i></span><label for="lutim-file-url" class="control-label pull-right"><%=l 'upload_image_url' %></label></span>
-            <div class="col-sm-9 col-xs-12">
-                <input type="url" name="lutim-file-url" class="form-control" id="lutim-file-url" placeholder="<%=l 'image_url' %>">
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="send-files">
+                <div id="drag-and-drop-zone" class="uploader well">
+                    <div><%=l 'drag-n-drop' %></div>
+                    <div class="or"><%=l 'or' %></div>
+                    <div class="btn btn-primary btn-xs">
+                        <label>
+                            <span><%=l 'file-browser' %></span>
+                            <input type="file" class="sr-only" name="files[]" multiple="multiple" title='<%=l 'file-browser' %>' accept="image/*">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="send-url">
+                <form role="form" class="form-horizontal" method="POST" action="<%== url_for('add') %>">
+                    <div class="form-group">
+                        <span class="">
+                            <span class="hidden-spin" style="font-size:200%; display:none;" > <i class="icon-spinner animate-spin pull-right"></i></span>
+                            <label for="lutim-file-url" class="sr-only"><%=l 'upload_image_url' %></label>
+                        </span>
+                        <div class="col-sm-10 col-md-8">
+                            <input type="url" name="lutim-file-url" class="form-control" id="lutim-file-url" placeholder="<%=l 'image_url' %>">
+                        </div>
+                        <div class="col-sm-2 col-md-2">
+                            <a href="#" class="btn btn-default btn-info" id="file-url-button"><%=l 'go' %></a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <a href="#" class="btn btn-default btn-primary pull-right" id="file-url-button"><%=l 'go' %></a>
-    </form>
+        <p class="help-block">
+            <%=l 'image-only' %>.
+            % if (config('always_encrypt')) {
+                <%=l 'always_encrypt' %>
+            % }
+        </p>
+    </div>
 </div>
 <!-- /D&D Zone -->
 

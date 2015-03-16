@@ -1,8 +1,8 @@
 .uploader
 {
-	border: 2px dotted #A5A5C7;
+/*	border: 2px dotted #A5A5C7;*/
 	width: 100%;
-	color: #92AAB0;
+	color: #333333;
 	text-align: center;
 	vertical-align: middle;
 	padding: 30px 0px;
@@ -22,7 +22,7 @@
 .uploader div.or {
 	font-size: 50%;
 	font-weight: bold;
-	color: #C0C0C0;
+	color: #616161;
 	padding: 10px;
 }
 
@@ -38,13 +38,17 @@
 	}
 }
 
+.uploader .btn label {
+    font-weight:normal;
+}
+
 .uploader div.browser label {
-	background-color: #5a7bc2;
+/*	background-color: #5a7bc2;*/
 	padding: 5px 15px;
-	color: white;
+/*	color: white;*/
 	padding: 6px 0px;
 	font-size: 40%;
-	font-weight: bold;
+	font-weight: normal;
 	cursor: pointer;
 	border-radius: 2px;
 	position: relative;
