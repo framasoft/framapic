@@ -2,6 +2,8 @@ package Lutim::I18N::fr;
 use Mojo::Base 'Lutim::I18N';
 
 my $inf_body = <<EOF;
+<h4>Qu’est-ce que Framapic ?</h4>
+<p>Framapic est une instance de Lutim</p>
 <h4>Qu’est-ce que Lutim ?</h4>
 <p>Lutim est un service gratuit et anonyme d’hébergement d’images. Il s’agit aussi du nom du logiciel (libre) qui fournit ce service.</p>
 <p>Les images déposées sur Lutim peuvent être stockées indéfiniment, ou s’effacer dès le premier affichage ou au bout du délai choisi parmi ceux proposés.</p>

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html style="max-height:100%;">
     <head>
-        <title>Lutim</title>
+        <title>Framapic</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="<%= url_for('index')->to_abs() %>img/favicon.png">
-        <meta property="og:title" content="Lutim" />
+        <meta property="og:title" content="Framapic" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="<%= url_for('index')->to_abs().$short %>?t" />
         <meta property="og:image" content="<%= url_for('index')->to_abs().$short %>" />
