@@ -1,0 +1,72 @@
+body {
+    background:#eee;
+    padding:0;
+}
+h1 {
+    font-family: "DejaVu Sans",Verdana,Geneva,sans-serif !important;
+    font-size: 48px;
+    font-weight: bold;
+}
+.lead {
+    font-style:italic;
+}
+.container.ombre {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+}
+
+img.ombre {
+    width:85%;
+    margin:20px;
+}
+
+#tuto-faq p[role="presentation"] .glyphicon,
+#le-logiciel p[role="presentation"] .glyphicon,
+#jardin p[role="presentation"] .glyphicon {
+    font-size:50px;
+}
+
+#expiration, #burnafterreading, #keepexif {
+    height:36px;
+    margin-top:15px;
+}
+#expiration label {
+    font-weight: normal;
+}
+
+#send-files, #send-url {
+    margin-top:15px;
+}
+
+.alert-success .input-group-btn:first-child .btn {
+    width:42px;
+}
+
+.alert-success .input-group-btn .btn.text-success:first-child {
+    width:43px;
+}
+
+.messages alert-success {
+    padding:5px 15px;
+}
+
+/* Ecrase lutim.css */
+
+.thumbnail {
+    margin-right: auto;
+}
+
+/* Ecrase uploader.css */
+.uploader {
+    border: 1px solid #E3E3E3;
+    color: #333333;
+}
+
+.uploader div.or {
+    color: #616161;
+ }
+
+.uploader .btn label {
+    font-weight:normal;
+}

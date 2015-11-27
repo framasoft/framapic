@@ -14,14 +14,7 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="icon" type="image/png" href="<%= url_for('/') %>img/favicon.png">
-        <link rel="icon" sizes="128x128" href="<%= url_for('/') %>img/lutim128.png">
-        <link rel="icon" sizes="196x196" href="<%= url_for('/') %>img/lutim196.png">
-        <link rel="apple-touch-icon" href="<%= url_for('/') %>img/lutim60.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="<%= url_for('/') %>img/lutim76.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="<%= url_for('/') %>img/lutim120.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="<%= url_for('/') %>img/lutim152.png">
-        <link rel="apple-touch-icon-precomposed" sizes="128x128" href="<%= url_for('/') %>img/lutim128.png">
+        <link rel="icon" type="image/png" href="<%= url_for('/img/favicon.png') %>">
 % if (current_route 'stats') {
         %= asset 'stats.css'
 % } elsif (current_route 'about') {
@@ -29,13 +22,14 @@
 % } else {
         %= asset 'index.css'
 % }
+        <link rel="stylesheet" type="text/css" href="/css/framapic.css">
     </head>
     <body>
-        <script src="/nav/nav.js" type="text/javascript"></script>
+        <script src="https://n3.framasoft.org/nav/nav.js" type="text/javascript"></script>
         <div class="container ombre">
             <header>
-                 <a class="link_nocol" href="<%= url_for('/') %>" title="<%=l 'homepage' %>"><h1><span class="frama">Frama</span><span class="services">pic</span></h1></a>
-                 <p class="lead">Partagez des images de façon anonyme</p>
+                <h1><a class="link_nocol" href="<%= url_for('/') %>" title="<%=l 'homepage' %>"><b class="frama">Frama</b><b class="services">pic</b></a></h1>
+                <p class="lead">Partagez des images de façon anonyme</p>
                  <hr class="trait" role="presentation" />
             </header>
             <main>
@@ -61,7 +55,7 @@
         %= asset 'index.js'
 % }
             <%= content %>
-                    </div>
+            </div>
                 </div>
                 <hr role="presentation" />
                 <div class="row">
@@ -86,7 +80,7 @@
                         <p>Lutim est <a href="https://www.gnu.org/licenses/agpl-3.0.html">sous licence libre <abbr title="GNU Affero General Public License">AGPL</abbr></a>.</p>
                         <p>Les sources de Framapic sont disponibles sur <a href="https://git.framasoft.org/framasoft/lutim">notre forge logicielle</a></p>
                         <p>Il est possible d’utiliser Framapic sous forme d'application :</p>
-                        <p class="text-center"><a class="btn btn-default btn-xs" href="#" id="install-app"><img src="<%= url_for('/') %>img/rocket.png" alt=""> <%=l 'install_as_webapp' %></a></p>
+                        <p class="text-center"><a class="btn btn-default btn-xs" href="#" id="install-app"><img src="<%= url_for('/') %>img/rocket.png" alt=""> <%=l('Install webapp')%></a></p>
                     </div>
 
                     <div class="col-md-4" id="jardin">

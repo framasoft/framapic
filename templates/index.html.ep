@@ -1,62 +1,113 @@
 % # vim:set sw=4 ts=4 sts=4 ft=html.epl expandtab:
-% $self->stash(subtitle => 'Images');
-
+% my %d = (
+%   delay_0   => l('no time limit'),
+%   delay_1   => l('24 hours'),
+%   delay_365 => l('1 year')
+% );
 <div class="messages">
 % if (defined(stash('short'))) {
+    % my $url = url_for('/'.stash('short'))->to_abs();
     <div class="alert alert-success">
-%     if (defined(stash('short'))) {
-        <img class="pull-left thumbnail" alt="<%= stash('filename') %> thumbnail" src="<%= stash('thumb') %>">
-%     }
-        <div>
-% # Display image informations
-            % my $url = url_for('/')->to_abs().stash('short');
-            <strong><%= stash('filename') %></strong>
-            &nbsp;&nbsp;&nbsp;<a target="_blank" class="btn btn-default btn-primary btn-xs" href="https://twitter.com/share?url=<%= $url %>?t"><%=l 'tweet_it' %></a>
-            <ul class="list-unstyled">
-                % my $delete_url = url_for('delete', {short => stash('real_short'), token => stash('token')})->to_abs();
-                <li><i class="icon icon-eye"></i>      <span class="sr-only"> <%= l 'view-link' %></span>       <%= link_to $url        => begin %> <%= $url %>        title =" <%= l 'view-link' %>"      <%= end %></li>
-                <li><i class="icon icon-download"></i> <span class="sr-only"> <%= l 'download-link' %>"></span> <%= link_to $url.'?dl'  => begin %> <%= $url.'?dl' %>  title =" <%= l 'download-link' %>"  <%= end %></li>
-                <li><i class="icon icon-share"></i>    <span class="sr-only"> <%= l 'share-link' %>"></span>    <%= link_to $url.'?t'   => begin %> <%= $url.'?t' %>   title =" <%= l 'share-link' %>"     <%= end %></li>
-                <li><i class="icon icon-trash"></i>    <span class="sr-only"> <%= l 'delete-link' %>"></span>   <%= link_to $delete_url => begin %> <%= $delete_url %> title =" <%= l 'delete-link' %>"    <%= end %></li>
-            </ul>
-        </div>
-% # Delay modification form
-        % my $modify_url = url_for('modify', {short => stash('real_short'), token => stash('token')})->to_abs();
-        <form class="form" role="form" method="POST" action="<%== $modify_url %>">
-            <div class="form-group form-inline">
-                <input name="image_url" type="hidden" value="<%= $url %>">
-                <select name="delete-day" class="form-control">
-                    % for my $delay (qw/0 1 7 30 365/) {
-                    %   my $text = ($delay == 7 || $delay == 30) ? l('delay_days', $delay) : l("delay_$delay");
-                    %   if (config('max_delay')) {
-                    %       if ($delay) {
-                    %           if ($delay < config('max_delay')) {
-                                    <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                    %           } elsif ($delay == config('max_delay')) {
-                                    <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                    %               last;
-                    %           } else {
-                    %               my $text = ($delay == 1) ? l('delay_1') : l('delay_days', $delay);
-                                    <option value="<%= config('max_delay') %>" <%== is_selected(config('max_delay')) %>><%=l('delay_days', config('max_delay')) %></option>
-                    %               last;
-                    %           }
-                    %       }
-                    %   } else {
-                            <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                    %   }
-                    % }
-                </select>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="first-view"> <%=l 'delete-first' %>
-                    </label>
-                    <label <%== (config('always_encrypt')) ? 'class="always-encrypt"' : '' %>>
-                        <input type="checkbox" name="crypt"> <%=l 'crypt_image' %>
-                    </label>
-                </div>
-                <%= submit_button l('go'), class => 'btn btn-sm btn-default btn-primary', id => 'submitbutton' %>
+        <div class="row">
+            <h4>
+                <a href="<%= $url.'.'.stash('ext') %>" target="_blank"><%= stash('filename') %></a>
+                &nbsp;&nbsp;&nbsp;<a title="<%= l('Tweet it!') %>" target="_blank" href="https://twitter.com/share?url=<%= $url %>?t"><i class="fa fa-fw fa-twitter"></i></a>
+            </h4>
+%     if (defined(stash('thumb'))) {
+            <div class="col-sm-3">
+                <a href="<%= $url.'.'.stash('ext') %>" target="_blank"><img class="thumbnail img-responsive" alt="<%= stash('filename') %> thumbnail" src="<%= stash('thumb') %>"></a>
             </div>
-        </form>
+%     }
+            <div class="col-sm-9">
+% # Display image informations
+
+                % my $delete_url = url_for('delete', {short => stash('real_short'), token => stash('token')})->to_abs();
+                <form class="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="view"><%= l('View link') %></label>
+                        <div class="input-group col-sm-8">
+                            <div class="input-group-btn">
+                                <a href="<%= $url.'.'.stash('ext') %>" target="_blank" class="btn btn-default">
+                                <i class="fa fa-fw fa-eye" title =" <%= l('View link') %>"></i></a>
+                            </div>
+                            <input type="text" class="form-control" id="view" value="<%= $url.'.'.stash('ext') %>" readonly>
+                            <div class="input-group-btn">
+                                <a href="#" onClick="copyToClipboard($(this));" class="btn btn-default jsonly" title="<%= l('Copy to clipboard') %>">
+                                <i class="fa fa-fw fa-clipboard"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="markdown"><%= l('Markdown syntax') %></label>
+                        <div class="input-group input-group-sm col-sm-8">
+                            <div class="input-group-btn">
+                                <i class="markdown-mark-solid" title ="<%= l('Markdown syntax') %>"></i>
+                            </div>
+                            <input type="text" class="form-control" id="markdown" value="![](<%= $url %>)" readonly>
+                            <div class="input-group-btn">
+                                <a href="#" onClick="copyToClipboard($(this));" class="btn btn-default jsonly" title="<%= l('Copy to clipboard') %>">
+                                <i class="fa fa-fw fa-clipboard"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="download"><%= l('Download link') %></label>
+                        <div class="input-group input-group-sm col-sm-8">
+                            <div class="input-group-btn">
+                                <a href="<%= $url %>?dl"><i class="fa fa-fw fa-download" title ="<%= l('Download link') %>"></i></a>
+                            </div>
+                            <input type="text" class="form-control" id="download" value="<%= $url %>?dl" readonly>
+                            <div class="input-group-btn">
+                                <a href="#" onClick="copyToClipboard($(this));" class="btn btn-default jsonly" title="<%= l('Copy to clipboard') %>">
+                                <i class="fa fa-fw fa-clipboard"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="share"><%= l('Link for share on social networks') %></label>
+                        <div class="input-group input-group-sm col-sm-8">
+                            <div class="input-group-btn">
+                                <a href="<%= $url %>?t" target="_blank">
+                                <i class="fa fa-fw fa-share" title ="<%= l('Link for share on social networks') %>"></i></a>
+                            </div>
+                            <input type="text" class="form-control" id="share" value="<%= $url %>?t" readonly>
+                            <div class="input-group-btn">
+                                <a href="#" onClick="copyToClipboard($(this));" class="btn btn-default jsonly" title="<%= l('Copy to clipboard') %>">
+                                <i class="fa fa-fw fa-clipboard"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="delete"><%= l('Deletion link') %></label>
+                        <div class="input-group col-sm-8 col-xs-12">
+                            <div class="input-group-btn text-danger">
+                                <a href="<%= $delete_url %>" target="_blank">
+                                <i class="fa fa-fw fa-trash"></i></a>
+                            </div>
+                            <input type="text" class="form-control" id="delete" value="<%= $delete_url %>" readonly>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+% # Delay modification form
+            % my $modify_url = url_for('modify', {short => stash('real_short'), token => stash('token')})->to_abs();
+            <form class="form col-sm-11 col-sm-offset-1" method="POST" action="<%== $modify_url %>">
+                <div class="form-group form-inline">
+                    <input name="image_url" type="hidden" value="<%= $url %>">
+                    <select name="delete-day" class="form-control">
+                        %= include 'partial/for_my_delay', d => \%d
+                    </select>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="first-view"> <%= l('Delete at first view?') %>
+                        </label>
+                    </div>
+                    <%= submit_button l('Let\'s go!'), class => 'btn btn-sm btn-default btn-primary', id => 'submitmodbutton' %>
+                </div>
+            </form>
+        </div>
     </div>
 % }
 % if (defined(flash('success'))) {
@@ -68,55 +119,40 @@
 % if (defined(flash('msg'))) {
     <div class="alert alert-danger">
         <button type="button" class="close jsonly" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong><%=l 'some-bad' %></strong><br>
+        <strong><%= l('Something bad happened') %></strong><br>
         <%= flash('filename') %> <%= flash('msg') %>
     </div>
 % }
 </div>
 
 <noscript>
-    <form class="form" role="form" method="POST" action="<%== url_for('add') %>" enctype="multipart/form-data">
+    <form class="form" method="POST" action="<%= url_for('/') %>" enctype="multipart/form-data">
         <div class="form-group form-inline">
             <select name="delete-day" class="form-control">
-                % for my $delay (qw/0 1 7 30 365/) {
-                %   my $text = ($delay == 7 || $delay == 30) ? l('delay_days', $delay) : l("delay_$delay");
-                %   if (config('max_delay')) {
-                %       if ($delay) {
-                %           if ($delay < config('max_delay')) {
-                                <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                %           } elsif ($delay == config('max_delay')) {
-                                <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                %               last;
-                %           } else {
-                %               my $text = ($delay == 1) ? l('delay_1') : l('delay_days', $delay);
-                                <option value="<%= config('max_delay') %>" <%== is_selected(config('max_delay')) %>><%=l('delay_days', config('max_delay')) %></option>
-                %               last;
-                %           }
-                %       }
-                %   } else {
-                        <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                %   }
-                % }
+                %= include 'partial/for_my_delay', d => \%d
             </select>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="first-view"> <%=l 'delete-first' %>
+                    <input type="checkbox" name="first-view"> <%= l('Delete at first view?') %>
                 </label>
                 <label <%== (config('always_encrypt')) ? 'class="always-encrypt"' : '' %>>
-                    <input type="checkbox" name="crypt"> <%=l 'crypt_image' %>
+                    <input type="checkbox" name="crypt"> <%= l('Encrypt the image (Lutim does not keep the key).') %>
+                </label>
+                <label>
+                    <input type="checkbox" name="keep-exif"> <%= l('Keep EXIF tags') %>
                 </label>
             </div>
         </div>
         <div class="form-group">
-            <label for="lutim-file"><%=l 'upload_image' %></label>
+            <label for="lutim-file"><%= l('Send an image') %></label>
             <input type="file" name="file" id="lutim-file" accept="image/*">
         </div>
         <div class="form-group">
-            <label for="lutim-file-url"><%=l 'upload_image_url' %></label>
-            <input type="url" name="lutim-file-url" placeholder="<%=l 'image_url' %>">
+            <label for="lutim-file-url"><%= l('Upload an image with its URL') %></label>
+            <input type="url" name="lutim-file-url" placeholder="<%= l('Image URL') %>">
         </div>
-        <p class="help-block"><%=l 'image-only' %></p>
-        <%= submit_button l('go'), class => 'btn btn-default btn-primary', id => 'submitbutton' %>
+        <p class="help-block"><%= l('Only images are allowed') %></p>
+        <%= submit_button l('Let\'s go!'), class => 'btn btn-default btn-primary', id => 'submitbutton' %>
     </form>
 </noscript>
 
@@ -124,324 +160,77 @@
 <div class="jsonly">
     <div role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#send-files" aria-controls="send-files" role="tab" data-toggle="tab">Envoyer des fichiers</a></li>
-            <li role="presentation"><a href="#send-url" aria-controls="profile" role="tab" data-toggle="tab">Envoyer depuis une URL</a></li>
+            <li role="presentation" class="active"><a href="#send-files" aria-controls="send-files" role="tab" data-toggle="tab"><i class="fa fa-fw fa-send"></i> Envoyer des fichiers</a></li>
+            <li role="presentation"><a href="#send-url" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-fw fa-link"></i>Envoyer depuis une URL</a></li>
+            <li role="presentation" class="pull-right"><a href="<%= url_for('myfiles') %>"><i class="fa fa-fw fa-history"></i> <%= l('My images') %></a></li>
         </ul>
 
         <div class="form-group form-inline">
             <div class="btn btn-default" id="expiration">
                 <label for="delete-day">Expiration</label>
                 <select id="delete-day" class="">
-                % for my $delay (qw/0 1 7 30 365/) {
-                %   my $text = ($delay == 7 || $delay == 30) ? l('delay_days', $delay) : l("delay_$delay");
-                %   if (config('max_delay')) {
-                %       if ($delay) {
-                %           if ($delay < config('max_delay')) {
-                                <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                %           } elsif ($delay == config('max_delay')) {
-                                <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                %               last;
-                %           } else {
-                %               my $text = ($delay == 1) ? l('delay_1') : l('delay_days', $delay);
-                                <option value="<%= config('max_delay') %>" <%== is_selected(config('max_delay')) %>><%=l('delay_days', config('max_delay')) %></option>
-                %               last;
-                %           }
-                %       }
-                %   } else {
-                        <option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>
-                %   }
-                % }
+            %= include 'partial/for_my_delay', d => \%d
                 </select>
             </div>
             <div class="btn btn-default" id="burnafterreading">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" id="first-view"> <%=l 'delete-first' %>
+                        <input type="checkbox" id="first-view"> <%= l('Delete at first view?') %>
                     </label>
                 </div>
             </div>
             <label <%== (config('always_encrypt')) ? 'class="always-encrypt"' : '' %>>
-                <input type="checkbox" id="crypt"> <%=l 'crypt_image' %>
+                <input type="checkbox" id="crypt"> <%= l('Encrypt the image (Lutim does not keep the key).') %>
             </label>
-        </div>
-
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="send-files">
-                <div id="drag-and-drop-zone" class="uploader well">
-                    <div><%=l 'drag-n-drop' %></div>
-                    <div class="or"><%=l 'or' %></div>
-                    <div class="btn btn-primary btn-xs">
-                        <label>
-                            <span><%=l 'file-browser' %></span>
-                            <input type="file" class="sr-only" name="files[]" multiple="multiple" title='<%=l 'file-browser' %>' accept="image/*">
-                        </label>
-                    </div>
+            <div class="btn btn-default" id="keepexif">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="keep-exif"> <%= l('Keep EXIF tags') %>
+                    </label>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="send-url">
-                <form role="form" class="form-horizontal" method="POST" action="<%== url_for('add') %>">
-                    <div class="form-group">
-                        <span class="">
-                            <span class="hidden-spin" style="font-size:200%; display:none;" > <i class="icon-spinner animate-spin pull-right"></i></span>
-                            <label for="lutim-file-url" class="sr-only"><%=l 'upload_image_url' %></label>
-                        </span>
-                        <div class="col-sm-10 col-md-8">
-                            <input type="url" name="lutim-file-url" class="form-control" id="lutim-file-url" placeholder="<%=l 'image_url' %>">
-                        </div>
-                        <div class="col-sm-2 col-md-2">
-                            <a href="#" class="btn btn-default btn-info" id="file-url-button"><%=l 'go' %></a>
-                        </div>
-                    </div>
-                </form>
+        </div>
+    </div>
+
+    <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active" id="send-files">
+            <div id="drag-and-drop-zone" class="uploader well">
+                <div class="h2"><%= l('Drag & drop images here') %></div>
+                <div class="or"><%= l('-or-') %></div>
+                <div class="btn btn-primary btn-xs">
+                    <label>
+                        <span><%= l('Click to open the file browser') %></span>
+                        <input type="file" name="files[]" multiple="multiple" title='<%= l('Click to open the file browser') %>' class="sr-only" accept="image/*">
+                    </label>
+                </div>
             </div>
         </div>
+
+        <div role="tabpanel" class="tab-pane" id="send-url">
+            <form class="form-horizontal" method="POST" action="<%== url_for('add') %>">
+                <div class="form-group">
+                    <span class="hidden-spin" style="font-size:200%; display:none;" > <i class="icon-spinner animate-spin pull-right"></i></span>
+                    <label for="lutim-file-url" class="sr-only"><%= l('Upload an image with its URL') %></label>
+                    <div class="col-sm-10 col-md-8">
+                        <input type="url" name="lutim-file-url" class="form-control" id="lutim-file-url" placeholder="<%= l('Image URL') %>">
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <a href="#" class="btn btn-default btn-info" id="file-url-button"><%= l('Let\'s go!') %></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <p class="help-block">
-            <%=l 'image-only' %>.
+            <%= l('Only images are allowed') %>.
             % if (config('always_encrypt')) {
-                <%=l 'always_encrypt' %>
+                <%= l('The images are encrypted on the server (Lutim does not keep the key).') %>
             % }
         </p>
     </div>
 </div>
 <!-- /D&D Zone -->
 
-%= javascript begin
-    function link(url, dl, token, modify) {
-        if (token !== undefined) {
-            if (modify !== undefined && modify === true) {
-                return  '<%== url_for('index')->to_abs() %>m/'+url+'/'+token;
-            } else {
-                url = 'd/'+url+'/'+token;
-            }
-        } else if (dl !== '') {
-            url = url+'?'+dl;
-        }
-        return '<a href="<%== url_for('index')->to_abs() %>'+url+'"><%== url_for('index')->to_abs() %>'+url+'</a>';
-    }
-    function share(url) {
-        console.log(url);
-        new MozActivity({
-            name: "share",
-            data: {
-                type: "url",
-                number: 1,
-                url: url
-            }
-        });
-    }
-    function tw_url(url) {
-        var btn = '&nbsp;&nbsp;&nbsp;<a target="_blank" class="btn btn-default btn-primary btn-xs" href="https://twitter.com/share?url=<%== url_for('index')->to_abs() %>'+url+'?t"><%=l 'tweet_it' %></a>';
-        if (navigator.mozSetMessageHandler !== undefined) {
-            btn = btn+'&nbsp;&nbsp;&nbsp;<a target="_blank" class="btn btn-default btn-primary btn-xs" href="" onclick="share(\'<%== url_for('index')->to_abs() %>'+url+'?t\');return false;"><%=l 'share_it' %></a>';
-        }
-        return btn
-    }
-    function modify(url, short) {
-        $.ajax({
-            url  : url,
-            type : "POST",
-            data : {
-                'image_url'      : '<%== url_for('index')->to_abs() %>'+short,
-                'format'         : 'json',
-                'first-view'     : ($("#first-view-"+short).prop('checked')) ? 1 : 0,
-                'delete-day'     : $("#day-"+short).val()
-            },
-            success: function(data) {
-                alert(data.msg);
-            },
-            error: function() {
-                alert('<%=l 'modify_image_error' %>');
-            }
-        });
-    }
-    function build_message(success, msg) {
-        if(success) {
-            var thumb = (msg.thumb !== null) ? '<img class="pull-left thumbnail" alt="'+msg.filename+' thumbnail" src="'+msg.thumb+'">' : ''
-            return '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'
-                +thumb
-                +'<div><strong>'
-                +msg.filename
-                +'</strong>'
-                +tw_url(msg.short)
-                +'<ul class="list-unstyled"><li><i class="icon icon-eye" title="<%=l 'view-link' %>"></i>&nbsp;'
-                +link(msg.short, '')
-                +'</li><li><i class="icon icon-download" title="<%=l 'download-link' %>"></i>&nbsp;'
-                +link(msg.short, 'dl')
-                +'</li><li><i class="icon icon-share" title="<%=l 'share-link' %>"></i>&nbsp;'
-                +link(msg.short, 't')
-                +'</li><li><i class="icon icon-trash" title="<%=l 'delete-link' %>"></i>&nbsp;'
-                +link(msg.real_short, '', msg.token)
-                +'</li></ul><form class="form" role="form" method="POST" action="'
-                +link(msg.real_short, '', msg.token, true)
-                +'"><div class="form-group form-inline"><select id="day-'+msg.real_short+'" name="delete-day" class="form-control">'
-% for my $delay (qw/0 1 7 30 365/) {
-%   my $text = ($delay == 7 || $delay == 30) ? l('delay_days', $delay) : l("delay_$delay");
-%   if (config('max_delay')) {
-%       if ($delay) {
-%           if ($delay < config('max_delay')) {
-                +'<option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>'
-%           } elsif ($delay == config('max_delay')) {
-                +'<option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>'
-%               last;
-%           } else {
-%               my $text = ($delay == 1) ? l('delay_1') : l('delay_days', $delay);
-                +'<option value="<%= config('max_delay') %>" <%== is_selected(config('max_delay')) %>><%=l('delay_days', config('max_delay')) %></option>'
-%               last;
-%           }
-%       }
-%   } else {
-                +'<option value="<%= $delay %>" <%== is_selected($delay) %>><%= $text %></option>'
-%   }
-% }
-                +'</select>&nbsp;<div class="checkbox"><label><input id="first-view-'+msg.real_short+'" type="checkbox" name="first-view"> <%=l 'delete-first' %></label>'
-                +'</div>&nbsp;'
-                +'<a href="#" onclick="modify(\''+link(msg.real_short, '', msg.token, true)+'\', \''+msg.real_short+'\');return false;" class="btn btn-sm btn-default btn-primary"><%=l 'go' %></a></div></form>'
-                +'</div>';
-        } else {
-            return '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong><%=l 'some-bad' %></strong><br>'
-                +msg.filename
-                +"<br>"
-                +msg.msg
-                +'</div>';
-        }
-    }
-    function bindddz(firstview, deleteday) {
-        $('#drag-and-drop-zone').dmUploader({
-            url: '<%== url_for('add') %>',
-            dataType: 'json',
-            allowedTypes: 'image/*',
-            maxFileSize: <%= $max_file_size %>,
-            onNewFile: function(id, file){
-                $(".messages").append('<div id="'+id+'-div">'+file.name+'<br><div class="progress"><div id="'+id+'"class="progress-bar progress-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"><span id="'+id+'-text" class="pull-left" style="padding-left: 10px;"> 0%</span></div></div></div>');
-            },
-            onUploadProgress: function(id, percent){
-                var percentStr = ' '+percent+'%';
-                $('#'+id).prop('aria-valuenow', percent);
-                $('#'+id).prop('style', 'width: '+percent+'%;');
-                $('#'+id+'-text').html(percentStr);
-            },
-            onUploadSuccess: function(id, data){
-                $('#'+id+'-div').remove();
-                $(".messages").append(build_message(data.success, data.msg));
-            },
-            onUploadError: function(id, message){
-                $(".messages").append(build_message(false, ''));
-            },
-            onFileSizeError: function(file){
-                $(".messages").append(build_message(false, { filename: file.name, msg: '<%= l('file_too_big', $max_file_size) %>'}));
-            }
-        });
-    }
-
-    function upload_url() {
-        var val = $("#lutim-file-url").val();
-        if (val !== undefined && val !== "") {
-            $("#lutim-file-url").prop('disabled', 'disabled');
-            $(".hidden-spin").css('display', 'block');
-            console.log(val);
-            $.ajax({
-                url  : '<%== url_for('add') %>',
-                type : "POST",
-                data : {
-                    'lutim-file-url' : val,
-                    'format'         : 'json',
-                    'first-view'     : ($("#first-view").prop('checked')) ? 1 : 0,
-                    'crypt'          : ($("#crypt").prop('checked')) ? 1 : 0,
-                    'delete-day'     : $("#delete-day").val()
-                },
-                success: function(data) {
-                    $(".messages").append(build_message(data.success, data.msg));
-                    if (data.success) {
-                        $("#lutim-file-url").val('');
-                    }
-                },
-                error: function() {
-                    $(".messages").append(build_message(false, ''));
-                },
-                complete: function() {
-                    $("#lutim-file-url").prop('disabled', '');
-                    $(".hidden-spin").css('display', 'none');
-                }
-            });
-        } else {
-            console.log("fhdsjnf");
-        }
-    }
-
-    function fileUpload(file) {
-        var fd = new FormData();
-        fd.append('file', file);
-
-        fd.append('format', 'json');
-        fd.append('first-view', ($("#first-view").prop('checked')) ? 1 : 0);
-        fd.append('crypt', ($("#crypt").prop('checked')) ? 1 : 0);
-        fd.append('delete-day', ($("#delete-day").val()));
-
-        $(".messages").append('<div id="1-div">'+file.name+'<br><div class="progress"><div id="1"class="progress-bar progress-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"><span id="1-text" class="pull-left" style="padding-left: 10px;"> 0%</span></div></div></div>');
-        // Ajax Submit
-        $.ajax({
-            url: '<%== url_for('add') %>',
-            type: 'POST',
-            dataType: 'json',
-            data: fd,
-            cache: false,
-            contentType: false,
-            processData: false,
-            forceSync: false,
-            xhr: function(){
-                var xhrobj = $.ajaxSettings.xhr();
-                if(xhrobj.upload){
-                    xhrobj.upload.addEventListener('progress', function(event) {
-                        var percent = 0;
-                        var position = event.loaded || event.position;
-                        var total = event.total || e.totalSize;
-                        if(event.lengthComputable){
-                          percent = Math.ceil(position / total * 100);
-                        }
-
-                        var percentStr = ' '+percent+'%';
-                        $('#1').prop('aria-valuenow', percent);
-                        $('#1').prop('style', 'width: '+percent+'%;');
-                        $('#1-text').html(percentStr);
-                    }, false);
-                }
-
-                return xhrobj;
-            },
-            success: function (data, message, xhr){
-                $('#1-div').remove();
-                $(".messages").append(build_message(data.success, data.msg));
-            },
-            error: function (xhr, status, errMsg){
-                $(".messages").append(build_message(false, ''));
-            },
-        });
-    }
-    window.onload = function() {
-        if (navigator.mozSetMessageHandler !== undefined) {
-            navigator.mozSetMessageHandler('activity', function handler(activityRequest) {
-                var activityName = activityRequest.source.name;
-                if (activityName == 'share') {
-                    activity = activityRequest;
-                    blob = activity.source.data.blobs[0];
-                    fileUpload(blob);
-                }
-            });
-        }
-    };
-    $('document').ready(function() {
-        var firstview = ($("#first-view").prop('checked')) ? 1 : 0;
-        var deleteday = ($("#delete-day").prop('checked')) ? 1 : 0;
-
-        bindddz(firstview, deleteday);
-
-        $("#file-url-button").on("click", upload_url);
-        $('#lutim-file-url').keydown( function(e) {
-            var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-            if(key == 13) {
-                e.preventDefault();
-                upload_url();
-            }
-        });
-    });
-% end
+%= include 'partial/common', format => 'js'
+%= include 'partial/lutim', format => 'js', d => \%d
