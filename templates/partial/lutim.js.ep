@@ -29,7 +29,7 @@
         });
     }
     function copyToClipboard(el) {
-        el = el.siblings('input');
+        el = el.parent().siblings('input');
         var textArea              = document.createElement('textarea');
         textArea.style.position   = 'fixed';
         textArea.style.top        = 0;
