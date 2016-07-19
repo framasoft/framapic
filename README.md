@@ -7,6 +7,4 @@ If you want to work with us, **fork us on [git.framasoft.org](https://git.framas
 Si vous souhaitez travailler avec nous, **forkez-nous sur [git.framasoft.org](https://git.framasoft.org)**. (l'inscription n'est pas nécessaire, vous pouvez vous connecter avec votre compte Github)
 * * *
 
-Framapic est la version traduite et personnalisée du logiciel Lutim que l'association Framasoft propose sur le site : https://framapic.org
-La personnalisation s'appuie sur la librairie Bootstrap dont les fichiers se trouvent dans la [Framanav](https://git.framasoft.org/framasoft/framanav).
-
+Framapic est un thème du logiciel Lutim que l'association Framasoft propose sur le site : https://framapic.org
