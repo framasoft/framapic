@@ -100,7 +100,7 @@
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-cloud"></span></p>
                         <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est une instance parmi d’autres du logiciel <a href="https://lut.im">Lutim</a> développé par <a href="http://www.fiat-tux.fr/">Luc Didry</a>.') %></p>
                         <p><%== l('Lutim est <a href="https://www.gnu.org/licenses/agpl-3.0.html">sous licence libre <abbr title="GNU Affero General Public License">AGPL</abbr></a>.') %></p>
-                        <p><%== l('Les sources du thème <b class="violet">Frama</b><b class="vert">pic</b> sont disponibles sur <a href="https://git.framasoft.org/framasoft/framapic">notre forge logicielle</a>') %></p>
+                        <p><%== l('Les sources du thème <b class="violet">Frama</b><b class="vert">pic</b> sont disponibles sur <a href="https://framagit.org/framasoft/framapic">notre forge logicielle</a>') %></p>
                         <p><%== l('Il est possible d’utiliser <b class="violet">Frama</b><b class="vert">pic</b> sous forme d’application :') %></p>
                         <p class="text-center"><a class="btn btn-default btn-xs" href="#" id="install-app"><img src="<%= url_for('/') %>img/rocket.png" alt=""> <%=l('Install webapp')%></a></p>
                     </div>

@@ -60,7 +60,7 @@ msgid "Le logiciel"
 msgstr ""
 
 #: templates/layouts/default.html.ep:103
-msgid "Les sources du thème <b class=\"violet\">Frama</b><b class=\"vert\">pic</b> sont disponibles sur <a href=\"https://git.framasoft.org/framasoft/framapic\">notre forge logicielle</a>"
+msgid "Les sources du thème <b class=\"violet\">Frama</b><b class=\"vert\">pic</b> sont disponibles sur <a href=\"https://framagit.org/framasoft/framapic\">notre forge logicielle</a>"
 msgstr ""
 
 #: templates/layouts/default.html.ep:102
