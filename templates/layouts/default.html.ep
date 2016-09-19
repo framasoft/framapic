@@ -29,7 +29,7 @@
         <div class="container ombre">
             <header>
                 <h1><a class="link_nocol" href="<%= url_for('/') %>" title="<%=l 'homepage' %>"><b class="frama">Frama</b><b class="services">pic</b></a></h1>
-                <p class="lead">Partagez des images de façon anonyme</p>
+                <p class="lead"><%= l('Partagez des images de façon anonyme') %></p>
                  <hr class="trait" role="presentation" />
             </header>
             <main>
@@ -63,31 +63,31 @@
                         <h2>Prise en main</h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-question-sign"></span></p>
                         <div id="aboutbox">
-                            <p><b class="violet">Frama</b><b class="vert">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée.</p>
+                            <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée.') %></p>
                             <ol>
-                                <li>Collez l'image à transmettre.</li>
-                                <li>Si besoin, définissez sa durée de conservation en ligne.</li>
-                                <li>Partagez ensuite avec vos correspondants le lien qui vous est donné.</li>
+                                <li><%= l('Collez l’image à transmettre.') %></li>
+                                <li><%= l('Si besoin, définissez sa durée de conservation en ligne.') %></li>
+                                <li><%= l('Partagez ensuite avec vos correspondants le lien qui vous est donné.') %></li>
                             </ol>
-                            <p>Vos images sont chiffrées et stockées sur nos serveurs sans qu’il nous soit possible de les déchiffrer.</p>
-                            <p>Pour vous aider dans l’utilisation du logiciel, voici <a href="https://framatube.org/media/framapicmp4" data-toggle="modal" onclick="jQuery('#TutoVideo').modal('show'); return false;">un tutoriel vidéo</a> réalisé par <a href="http://arpinux.org/">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href="https://handylinux.org/">HandyLinux</a>.</p>
+                            <p><%= l('Vos images sont chiffrées et stockées sur nos serveurs sans qu’il nous soit possible de les déchiffrer.') %></p>
+                            <p><%== l('Pour vous aider dans l’utilisation du logiciel, voici <a href="https://framatube.org/media/framapicmp4" data-toggle="modal" onclick="jQuery(\'#TutoVideo\').modal(\'show\'); return false;">un tutoriel vidéo</a> réalisé par <a href="http://arpinux.org/">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href="https://handylinux.org/">HandyLinux</a>.') %></p>
 
     <!-- modale vidéo -->
     <div class="modal fade" id="TutoVideo" tabindex="-1" role="dialog" aria-labelledby="TutoVideoLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Fermer</span></button>
-                    <h1 id="TutoVideoLabel">Tutoriel vidéo</h1>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only"><%= l('Fermer') %></span></button>
+                    <h1 id="TutoVideoLabel"><%= l('Tutoriel vidéo') %></h1>
                 </div>
                 <div class="modal-body">
                     <p><video controls="controls" preload="none" poster="https://framatube.org/images/media/989l.jpg" height="340" width="570">
                         <source src="https://framatube.org/blip/framapic.mp4" type="video/mp4">
                         <source src="https://framatube.org/blip/framapic.webm" type="video/webm">
                     </video></p>
-                    <p>-&gt; La <a href="https://framatube.org/blip/framapic.webm">vidéo au format webm</a></p>
+                    <p>-&gt; <%== l('La <a href="https://framatube.org/blip/framapic.webm">vidéo au format webm</a>') %></p>
                </div>
-               <div class="modal-footer"><a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a></div>
+               <div class="modal-footer"><a href="#" class="btn btn-default" data-dismiss="modal"><%= l('Fermer') %></a></div>
            </div>
         </div>
     </div>
@@ -96,21 +96,20 @@
                     </div>
 
                     <div class="col-md-4" id="le-logiciel">
-                        <h2>Le logiciel</h2>
+                        <h2><%= l('Le logiciel') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-cloud"></span></p>
-                        <p><b class="violet">Frama</b><b class="vert">pic</b> est une instance parmi d’autres du logiciel <a href="https://lut.im">Lutim</a> développé par <a href="http://www.fiat-tux.fr/">Luc Didry</a>.</p>
-                        <p>Lutim est <a href="https://www.gnu.org/licenses/agpl-3.0.html">sous licence libre <abbr title="GNU Affero General Public License">AGPL</abbr></a>.</p>
-                        <p>Les sources du thème <b class="violet">Frama</b><b class="vert">pic</b> sont disponibles sur <a href="https://git.framasoft.org/framasoft/framapic">notre forge logicielle</a></p>
-                        <p>Il est possible d’utiliser <b class="violet">Frama</b><b class="vert">pic</b> sous forme d'application :</p>
+                        <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est une instance parmi d’autres du logiciel <a href="https://lut.im">Lutim</a> développé par <a href="http://www.fiat-tux.fr/">Luc Didry</a>.') %></p>
+                        <p><%== l('Lutim est <a href="https://www.gnu.org/licenses/agpl-3.0.html">sous licence libre <abbr title="GNU Affero General Public License">AGPL</abbr></a>.') %></p>
+                        <p><%== l('Les sources du thème <b class="violet">Frama</b><b class="vert">pic</b> sont disponibles sur <a href="https://git.framasoft.org/framasoft/framapic">notre forge logicielle</a>') %></p>
+                        <p><%== l('Il est possible d’utiliser <b class="violet">Frama</b><b class="vert">pic</b> sous forme d’application :') %></p>
                         <p class="text-center"><a class="btn btn-default btn-xs" href="#" id="install-app"><img src="<%= url_for('/') %>img/rocket.png" alt=""> <%=l('Install webapp')%></a></p>
                     </div>
 
                     <div class="col-md-4" id="jardin">
-                        <h2>Cultivez votre jardin</h2>
+                        <h2><%= l('Cultivez votre jardin') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-tree-deciduous"></span></p>
-                        <p>Pour participer au développement du logiciel, proposer des améliorations
-                            ou simplement le télécharger, rendez-vous sur <a href="https://github.com/ldidry/lutim">le site de développement</a>.</p>
-                        <p>Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :</p>
+                        <p><%== l('Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href="https://framagit.org/luc/lutim">le site de développement</a>.') %></p>
+                        <p><%= l('Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :') %></p>
                         <p class="text-center"><a href="http://framacloud.org/cultiver-son-jardin/installation-de-lutim/" class="btn btn-success"><span class="glyphicon glyphicon-tree-deciduous"></span> framacloud.org</a></p>
                     </div>
                 </div>

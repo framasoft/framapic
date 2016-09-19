@@ -1,7 +1,7 @@
 % # vim:set sts=4 sw=4 ts=4 ft=html.epl expandtab:
 <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> Envoyer des fichiers</a></li>
-    <li role="presentation"><a href="/#send-url"><i class="fa fa-fw fa-link"></i>Envoyer depuis une URL</a></li>
+    <li role="presentation"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> <%= l('Envoyer des fichiers') %></a></li>
+    <li role="presentation"><a href="/#send-url"><i class="fa fa-fw fa-link"></i> <%= l('Envoyer depuis une URL') %></a></li>
     <li role="presentation" class="pull-right active"><a href="<%= url_for('myfiles') %>"><i class="fa fa-fw fa-history"></i> <%= l('My images') %></a></li>
 </ul>
 

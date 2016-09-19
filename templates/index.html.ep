@@ -196,14 +196,14 @@
 <div class="jsonly">
     <div role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#send-files" aria-controls="send-files" role="tab" data-toggle="tab"><i class="fa fa-fw fa-send"></i> Envoyer des fichiers</a></li>
-            <li role="presentation"><a href="#send-url" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-fw fa-link"></i>Envoyer depuis une URL</a></li>
+            <li role="presentation" class="active"><a href="#send-files" aria-controls="send-files" role="tab" data-toggle="tab"><i class="fa fa-fw fa-send"></i> <%= l('Envoyer des fichiers') %></a></li>
+            <li role="presentation"><a href="#send-url" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-fw fa-link"></i><%= l('Envoyer depuis une URL') %></a></li>
             <li role="presentation" class="pull-right"><a href="<%= url_for('myfiles') %>"><i class="fa fa-fw fa-history"></i> <%= l('My images') %></a></li>
         </ul>
 
         <div class="form-group form-inline">
             <div class="btn btn-default" id="expiration">
-                <label for="delete-day">Expiration</label>
+                <label for="delete-day"><%= l('Expiration') %></label>
                 <select id="delete-day" class="">
             %= include 'partial/for_my_delay', d => \%d
                 </select>
