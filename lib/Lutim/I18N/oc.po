@@ -10,92 +10,92 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Occitan <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: templates/layouts/default.html.ep:66
 msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée."
-msgstr ""
+msgstr "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> es un servici en linha liure que permet de partejar d'imatges d'un biais confidentcial e securizat."
 
 #: templates/layouts/default.html.ep:101
 msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est une instance parmi d’autres du logiciel <a href=\"https://lut.im\">Lutim</a> développé par <a href=\"http://www.fiat-tux.fr/\">Luc Didry</a>."
-msgstr ""
+msgstr "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> es una instància entre d’autras del logicial <a href=\"https://lut.im\">Lutim</a> desvolopat per <a href=\"http://www.fiat-tux.fr/\">Luc Didry</a>."
 
 #: templates/layouts/default.html.ep:68
 msgid "Collez l’image à transmettre."
-msgstr ""
+msgstr "Pegatz l’imatge per transmetre"
 
 #: templates/layouts/default.html.ep:109
 msgid "Cultivez votre jardin"
-msgstr ""
+msgstr "Cultivatz vòstre òrt"
 
 #: templates/index.html.ep:200 templates/myfiles.html.ep:4
 msgid "Envoyer depuis une URL"
-msgstr ""
+msgstr "Mandar dempuèi una URL"
 
 #: templates/index.html.ep:199 templates/myfiles.html.ep:3
 msgid "Envoyer des fichiers"
-msgstr ""
+msgstr "Mandar de fichièrs"
 
 #: templates/index.html.ep:206
 msgid "Expiration"
-msgstr ""
+msgstr "Expiracion"
 
 #: templates/layouts/default.html.ep:80 templates/layouts/default.html.ep:90
 msgid "Fermer"
-msgstr ""
+msgstr "Tampar"
 
 #: templates/layouts/default.html.ep:104
 msgid "Il est possible d’utiliser <b class=\"violet\">Frama</b><b class=\"vert\">pic</b> sous forme d’application :"
-msgstr ""
+msgstr "Se pòt utilizar <b class=\"violet\">Frama</b><b class=\"vert\">pic</b> jos la forma d'aplicacion :"
 
 #: templates/layouts/default.html.ep:88
 msgid "La <a href=\"https://framatube.org/blip/framapic.webm\">vidéo au format webm</a>"
-msgstr ""
+msgstr "La <a href=\"https://framatube.org/blip/framapic.webm\">vidèo al format webm</a>"
 
 #: templates/layouts/default.html.ep:99
 msgid "Le logiciel"
-msgstr ""
+msgstr "Lo logicial"
 
 #: templates/layouts/default.html.ep:103
 msgid "Les sources du thème <b class=\"violet\">Frama</b><b class=\"vert\">pic</b> sont disponibles sur <a href=\"https://framagit.org/framasoft/framapic\">notre forge logicielle</a>"
-msgstr ""
+msgstr "Las fonts del tèma <b class=\"violet\">Frama</b><b class=\"vert\">pic</b> son disponiblas sus <a href=\"https://framagit.org/framasoft/framapic\">nòstra farga logiciala</a>"
 
 #: templates/layouts/default.html.ep:102
 msgid "Lutim est <a href=\"https://www.gnu.org/licenses/agpl-3.0.html\">sous licence libre <abbr title=\"GNU Affero General Public License\">AGPL</abbr></a>."
-msgstr ""
+msgstr "Lutim es <a href=\"https://www.gnu.org/licenses/agpl-3.0.html\">jos licéncia liura <abbr title=\"GNU Affero General Public License\">AGPL</abbr></a>."
 
 #: templates/layouts/default.html.ep:32
 msgid "Partagez des images de façon anonyme"
-msgstr ""
+msgstr "Partejatz d'image de manièra anonima"
 
 #: templates/layouts/default.html.ep:70
 msgid "Partagez ensuite avec vos correspondants le lien qui vous est donné."
-msgstr ""
+msgstr "Puèi partejatz amb vòstres correspondents lo ligam que vos serà donat."
 
 #: templates/layouts/default.html.ep:111
 msgid "Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href=\"https://framagit.org/luc/lutim\">le site de développement</a>."
-msgstr ""
+msgstr "Per participar al desvolopament del logicial, prepausar de milhoraments o simplament lo telecargar, anatz sus <a href=\"https://framagit.org/luc/lutim\">lo site de desvolopament</a>."
 
 #: templates/layouts/default.html.ep:73
 msgid "Pour vous aider dans l’utilisation du logiciel, voici <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un tutoriel vidéo</a> réalisé par <a href=\"http://arpinux.org/\">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href=\"https://handylinux.org/\">HandyLinux</a>."
-msgstr ""
+msgstr "Per vos ajudar dins l’utilizacion del logicial, vaquí <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un cors vidèo</a> realizat per <a href=\"http://arpinux.org/\">arpinux</a>, artisan paisatgista de la distribucion GNU/Linux per començaire <a href=\"https://handylinux.org/\">HandyLinux</a>."
 
 #: templates/layouts/default.html.ep:69
 msgid "Si besoin, définissez sa durée de conservation en ligne."
-msgstr ""
+msgstr "Se cal, causissetz sa durada de conservacion en linha."
 
 #: templates/layouts/default.html.ep:112
 msgid "Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :"
-msgstr ""
+msgstr "Se volètz installar aqueste logicial per vòstra pròpia utilizacion e aital aver mai d'automonia, vos podèm ajudar sus :"
 
 #: templates/layouts/default.html.ep:81
 msgid "Tutoriel vidéo"
-msgstr ""
+msgstr "Cors vidèo"
 
 #: templates/layouts/default.html.ep:72
 msgid "Vos images sont chiffrées et stockées sur nos serveurs sans qu’il nous soit possible de les déchiffrer."
-msgstr ""
+msgstr "Vòstres imatges son chifrats e gardats sus nòstres servidors sens que sea possible de los deschifrar."
 

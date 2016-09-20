@@ -8,3 +8,5 @@ Si vous souhaitez travailler avec nous, **forkez-nous sur [framagit.org](https:/
 * * *
 
 Framapic est un thème du logiciel Lutim que l'association Framasoft propose sur le site : https://framapic.org
+
+Merci à Quentin Pagès pour la traduction en Occitan :-)
