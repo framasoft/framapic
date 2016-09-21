@@ -60,7 +60,7 @@
                 <hr role="presentation" />
                 <div class="row">
                     <div class="col-md-4" id="tuto-faq">
-                        <h2>Prise en main</h2>
+                        <h2><%= l('Prise en main') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-question-sign"></span></p>
                         <div id="aboutbox">
                             <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée.') %></p>

@@ -83,6 +83,10 @@ msgstr "Per participar al desvolopament del logicial, prepausar de milhoraments 
 msgid "Pour vous aider dans l’utilisation du logiciel, voici <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un tutoriel vidéo</a> réalisé par <a href=\"http://arpinux.org/\">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href=\"https://handylinux.org/\">HandyLinux</a>."
 msgstr "Per vos ajudar dins l’utilizacion del logicial, vaquí <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un cors vidèo</a> realizat per <a href=\"http://arpinux.org/\">arpinux</a>, artisan paisatgista de la distribucion GNU/Linux per començaire <a href=\"https://handylinux.org/\">HandyLinux</a>."
 
+#: templates/layouts/default.html.ep:63
+msgid "Prise en main"
+msgstr "Primièrs passes"
+
 #: templates/layouts/default.html.ep:69
 msgid "Si besoin, définissez sa durée de conservation en ligne."
 msgstr "Se cal, causissetz sa durada de conservacion en linha."

@@ -83,6 +83,10 @@ msgstr ""
 msgid "Pour vous aider dans l’utilisation du logiciel, voici <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un tutoriel vidéo</a> réalisé par <a href=\"http://arpinux.org/\">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href=\"https://handylinux.org/\">HandyLinux</a>."
 msgstr ""
 
+#: templates/layouts/default.html.ep:63
+msgid "Prise en main"
+msgstr ""
+
 #: templates/layouts/default.html.ep:69
 msgid "Si besoin, définissez sa durée de conservation en ligne."
 msgstr ""
