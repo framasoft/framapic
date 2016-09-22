@@ -77,7 +77,7 @@ msgstr "Puèi partejatz amb vòstres correspondents lo ligam que vos serà donat
 
 #: templates/layouts/default.html.ep:111
 msgid "Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href=\"https://framagit.org/luc/lutim\">le site de développement</a>."
-msgstr "Per participar al desvolopament del logicial, prepausar de milhoraments o simplament lo telecargar, anatz sus <a href=\"https://framagit.org/luc/lutim\">lo site de desvolopament</a>."
+msgstr "Per participar al desvolopament del logicial, prepausar de milhoraments o simplament lo telecargar, anatz <a href=\"https://framagit.org/luc/lutim\">sul site de desvolopament</a>."
 
 #: templates/layouts/default.html.ep:73
 msgid "Pour vous aider dans l’utilisation du logiciel, voici <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un tutoriel vidéo</a> réalisé par <a href=\"http://arpinux.org/\">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href=\"https://handylinux.org/\">HandyLinux</a>."
