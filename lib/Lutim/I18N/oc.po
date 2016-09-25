@@ -17,7 +17,7 @@ msgstr ""
 
 #: templates/layouts/default.html.ep:66
 msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée."
-msgstr "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> es un servici en linha liure que permet de partejar d'imatges d'un biais confidentcial e securizat."
+msgstr "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> es un servici en linha liure que permet de partejar d'imatges d'un biais confidencial e securizat."
 
 #: templates/layouts/default.html.ep:101
 msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est une instance parmi d’autres du logiciel <a href=\"https://lut.im\">Lutim</a> développé par <a href=\"http://www.fiat-tux.fr/\">Luc Didry</a>."
@@ -69,7 +69,7 @@ msgstr "Lutim es <a href=\"https://www.gnu.org/licenses/agpl-3.0.html\">jos lic�
 
 #: templates/layouts/default.html.ep:32
 msgid "Partagez des images de façon anonyme"
-msgstr "Partejatz d'image de manièra anonima"
+msgstr "Partejatz d'imatges de manièra anonima"
 
 #: templates/layouts/default.html.ep:70
 msgid "Partagez ensuite avec vos correspondants le lien qui vous est donné."
@@ -81,7 +81,7 @@ msgstr "Per participar al desvolopament del logicial, prepausar de milhoraments 
 
 #: templates/layouts/default.html.ep:73
 msgid "Pour vous aider dans l’utilisation du logiciel, voici <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un tutoriel vidéo</a> réalisé par <a href=\"http://arpinux.org/\">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href=\"https://handylinux.org/\">HandyLinux</a>."
-msgstr "Per vos ajudar dins l’utilizacion del logicial, vaquí <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un cors vidèo</a> realizat per <a href=\"http://arpinux.org/\">arpinux</a>, artisan paisatgista de la distribucion GNU/Linux per començaire <a href=\"https://handylinux.org/\">HandyLinux</a>."
+msgstr "Per vos ajudar dins l’utilizacion del logicial, vaquí <a href=\"https://framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick=\"jQuery('#TutoVideo').modal('show'); return false;\">un cors vidèo</a> realizat per <a href=\"http://arpinux.org/\">arpinux</a>, artisan païsatgista de la distribucion GNU/Linux per començaire <a href=\"https://handylinux.org/\">HandyLinux</a>."
 
 #: templates/layouts/default.html.ep:63
 msgid "Prise en main"
@@ -89,11 +89,11 @@ msgstr "Primièrs passes"
 
 #: templates/layouts/default.html.ep:69
 msgid "Si besoin, définissez sa durée de conservation en ligne."
-msgstr "Se cal, causissetz sa durada de conservacion en linha."
+msgstr "Se cal, causissètz sa durada de conservacion en linha."
 
 #: templates/layouts/default.html.ep:112
 msgid "Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :"
-msgstr "Se volètz installar aqueste logicial per vòstra pròpia utilizacion e aital aver mai d'automonia, vos podèm ajudar sus :"
+msgstr "Se volètz installar aqueste logicial per vòstra pròpria utilizacion e aital aver mai d'automonia, vos podèm ajudar sus :"
 
 #: templates/layouts/default.html.ep:81
 msgid "Tutoriel vidéo"
@@ -101,5 +101,5 @@ msgstr "Cors vidèo"
 
 #: templates/layouts/default.html.ep:72
 msgid "Vos images sont chiffrées et stockées sur nos serveurs sans qu’il nous soit possible de les déchiffrer."
-msgstr "Vòstres imatges son chifrats e gardats sus nòstres servidors sens que sea possible de los deschifrar."
+msgstr "Vòstres imatges son chifrats e gardats sus nòstres servidors sens que siá possible de los deschifrar."
 
