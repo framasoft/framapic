@@ -29,7 +29,7 @@
         <div class="container ombre">
             <header>
                 <h1><a class="link_nocol" href="<%= url_for('/') %>" title="<%=l 'homepage' %>"><b class="frama">Frama</b><b class="services">pic</b></a></h1>
-                <p class="lead"><%= l('Partagez des images de façon anonyme') %></p>
+                <p class="lead"><%= l('Partagez des images de façon confidentielle') %></p>
                  <hr class="trait" role="presentation" />
             </header>
             <main>
