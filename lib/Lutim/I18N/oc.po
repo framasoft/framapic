@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: templates/layouts/default.html.ep:66
-msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée."
-msgstr "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> es un servici en linha liure que permet de partejar d'imatges d'un biais confidentcial e securizat."
+msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle."
+msgstr "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> es un servici en linha liure que permet de partejar d'imatges d'un biais confidentcial."
 
 #: templates/layouts/default.html.ep:101
 msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est une instance parmi d’autres du logiciel <a href=\"https://lut.im\">Lutim</a> développé par <a href=\"http://www.fiat-tux.fr/\">Luc Didry</a>."

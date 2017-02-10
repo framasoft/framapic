@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: templates/layouts/default.html.ep:66
-msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée."
+msgid "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle."
 msgstr ""
 
 #: templates/layouts/default.html.ep:101
