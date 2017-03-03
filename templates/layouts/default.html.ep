@@ -29,7 +29,7 @@
         <div class="container ombre">
             <header>
                 <h1><a class="link_nocol" href="<%= url_for('/') %>" title="<%=l 'homepage' %>"><b class="frama">Frama</b><b class="services">pic</b></a></h1>
-                <p class="lead"><%= l('Partagez des images de façon anonyme') %></p>
+                <p class="lead"><%= l('Partagez des images de façon confidentielle') %></p>
                  <hr class="trait" role="presentation" />
             </header>
             <main>
@@ -63,7 +63,7 @@
                         <h2><%= l('Prise en main') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-question-sign"></span></p>
                         <div id="aboutbox">
-                            <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle et sécurisée.') %></p>
+                            <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle.') %></p>
                             <ol>
                                 <li><%= l('Collez l’image à transmettre.') %></li>
                                 <li><%= l('Si besoin, définissez sa durée de conservation en ligne.') %></li>
