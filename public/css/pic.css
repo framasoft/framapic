@@ -1,0 +1,141 @@
+body {
+    background:#eee;
+    padding:0;
+}
+h1 {
+    font-family: "DejaVu Sans",Verdana,Geneva,sans-serif !important;
+    font-size: 48px;
+    font-weight: bold;
+}
+.lead {
+    font-style:italic;
+}
+.container.ombre {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+}
+
+img.ombre {
+    width:85%;
+    margin:20px;
+}
+
+#tuto-faq p[role="presentation"] .glyphicon,
+#le-logiciel p[role="presentation"] .glyphicon,
+#jardin p[role="presentation"] .glyphicon {
+    font-size:50px;
+}
+
+#expiration, .checkbox .btn {
+    height:46px;
+    margin-top:15px;
+}
+.checkbox .btn [type="checkbox"] {
+    margin-left:10px !important;
+    vertical-align:bottom;
+    margin-top:7px;
+}
+#expiration label {
+    font-weight: normal;
+}
+
+#send-files, #send-url {
+    margin-top:15px;
+}
+
+.messages alert-success {
+    padding:5px 15px;
+}
+
+/* Ecrase lutim.css */
+
+.thumbnail {
+    margin-right: auto;
+}
+
+/* Ecrase uploader.css */
+.uploader {
+    border: 1px solid #E3E3E3;
+    color: #333333;
+}
+
+.uploader div.or {
+    color: #616161;
+ }
+
+.uploader .btn label {
+    font-weight:normal;
+}
+
+.uploader div.browser label {
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+  background-color: #6A5687;
+  border-color: #6A5687;
+}
+
+.uploader div.browser label:hover,
+.uploader div.browser label:focus,
+.uploader div.browser label:active {
+  color: #fff;
+  background-color: #635182;
+  border-color: #635182;
+}
+.table-responsive + a.btn-primary,
+h4 + hr {
+    display:none;
+}
+
+.tab-content .form-group,
+.help-block {
+    margin-top:15px;
+}
+
+#myfiles td {
+    vertical-align:middle;
+}
+#myfiles img {
+    width:80px;
+}
+.messages .form-control,
+.messages .input-group-addon {
+    color: #333 !important;
+    background-color: #fff !important;
+    border-color: #bdbdbd !important;
+}
+
+.adjust-addon .btn:nth-child(2) {
+    width:42px;
+    margin-left:0px
+}
+.messages .input-group-btn .text-danger {
+    width:43px;
+}
+
+/* Icons */
+#myfiles .icon:before,.fa:before {
+    font: normal normal normal 18px/1 FontAwesome;
+}
+.icon-ok:before {
+    content: "\f00c";
+}
+.icon-cancel:before {
+    content: "\f05e";
+}
+
+.markdown-mark-solid { font-size:10px; }
+
+.icon-share {
+    color: #677835;
+}
+.icon-twitter {
+    color: #11809E;
+}
+.icon-trash:before {
+    font: normal normal normal 12px/1 FontAwesome;
+    content: "\f1f8";
+}
+
+
+
