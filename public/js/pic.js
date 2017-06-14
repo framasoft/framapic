@@ -2,15 +2,7 @@ $(document).ready(function(){
 
     if(/myfiles/i.test(location.href)) {
 
-        $('main > .row > .col-md-12').prepend(
-            '<div role="tabpanel">'+
-                '<ul class="nav nav-tabs" role="tablist">'+
-                    '<li role="presentation"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> Envoyer des fichiers</a></li>'+
-                    '<li role="presentation" ><a href="/#send-url"><i class="fa fa-fw fa-link"></i> Envoyer depuis une URL</a></li>'+
-                    '<li role="presentation" class="active pull-right"><a href="/myfiles"><i class="fa fa-fw fa-history"></i> Mes images</a></li>'+
-                '</ul>'+
-            '</div>'
-        );
+        $('#nav-myfiles').addClass('active');
 
         $('h4').addClass('h2'); // devrait être en h2 si on respecte la hierarchie
 
@@ -41,21 +33,29 @@ $(document).ready(function(){
 
     } else if(/gallery/i.test(location.href)) {
 
+        $('main > .row > .col-md-12 > [role="tabpanel"]').remove();
         $('#download-all').removeClass('col-sm-12').parent().addClass('text-center');
 
     } else {
 
         $('main > .row > .col-md-12 > .jsonly')
-            .wrapInner('<div class="tab-content"></div>')
-            .prepend(
-                '<div role="tabpanel">'+
-                    '<ul class="nav nav-tabs" role="tablist">'+
-                        '<li role="presentation" class="active"><a href="#send-files" aria-controls="send-files" role="tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-fw fa-send"></i> Envoyer des fichiers</a></li>'+
-                        '<li role="presentation" ><a href="#send-url" aria-controls="send-url" role="tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-fw fa-link"></i> Envoyer depuis une URL</a></li>'+
-                        '<li role="presentation" class="pull-right"><a href="/myfiles"><i class="fa fa-fw fa-history"></i> Mes images</a></li>'+
-                    '</ul>'+
-                '</div>'
-            );
+            .wrapInner('<div class="tab-content"></div>');
+        $('.tab-content').prepend($('[role="tabpanel"]'));
+        $('#nav-send-files').addClass('active');
+        $('#nav-send-files a').attr({
+            'href':'#send-files',
+            'aria-controls':'send-files',
+            'role':'tab',
+            'data-toggle':'tab',
+            'aria-expanded':'true'
+        });
+        $('#nav-send-url a').attr({
+            'href':'#send-url',
+            'aria-controls':'send-url',
+            'role':'tab',
+            'data-toggle':'tab',
+            'aria-expanded':'false'
+        });
 
         // Form Send file
         $('#drag-and-drop-zone')
@@ -93,4 +93,8 @@ $(document).ready(function(){
         if(location.hash=='#send-url') { jQuery('a[href="#send-url"]').trigger('click') };
 
     }
+
+    $('#le-logiciel a[href*="liberapay.com/sky"]').addClass('btn btn-soutenir btn-xs').css('margin-left','5px');
+    $('#le-logiciel a[href*="fiat-tux.fr"]').after($('#le-logiciel a[href*="liberapay.com/sky"]'));
+    $('#liberapay-img').attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAASCAYAAABrXO8xAAABqUlEQVQ4jY2SP4sUQRDFn5p5nMEJGogYiF9AFMU/mIihBuonMBNFI6MDLzDXxEQzweQMFARRozs40UAQkwNFDI/FYcHZXWa6a6brZ2DPMMip21DJ63pVr16VlF8TuJAiTz3ytQ1c1LzPjXU3cKM04+hcpLJkySPf3MAjn2Yz9s9FbCpOuTHOxBd//iN2bEtsjWtuuBspRZYlKQSONDVn28jVZNxMgRtN4DwFi5Kk1VV2JeNBns+amnOSlKV7xoexxogFFQWLA2OCJDU1Z9xIGav7+XOkyBNNp+xzY5LB95KUIstdtzZyRZKoOeTGz76BVZwcVLqTZb7MWGEVJyRpNGLBI68z7kqRux2RwOHJhL0e+Zwd3qRkSZLGY/a4sdZ5MVz8VJLMOOZGkbG3nfP1b6mzjH+UGz9y9S+S1EYu99IDtyWpqjjgkecd3kYuyY2y0+2RN8l4OHDwnUeeeWRzUOyxsoP3BomFR15ts7uexBa7+8tJgeturOdDmGbpW25suPEhBR41Faf/erNmHB9Uv/XfI+87G/f71VQcnJvoke+ZOFpZYee/cn8BK+FRWdUll/MAAAAASUVORK5CYII=');
 });

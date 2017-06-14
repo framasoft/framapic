@@ -137,5 +137,7 @@ h4 + hr {
     content: "\f1f8";
 }
 
-
-
+#liberapay-img {
+    margin-top: 0px;
+    width: 14px;
+    height: 18px;

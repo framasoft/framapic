@@ -48,6 +48,13 @@
             <main>
                 <div class="row">
                     <div class="col-md-12">
+                        <div role="tabpanel">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" id="nav-send-files"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> <%= l('Envoyer des fichiers') %></a></li>
+                                <li role="presentation" id="nav-send-url" ><a href="/#send-url"><i class="fa fa-fw fa-link"></i> <%= l('Envoyer depuis une URL') %></a></li>
+                                <li role="presentation" id="nav-myfiles" class="pull-right"><a href="/myfiles"><i class="fa fa-fw fa-history"></i> <%= l('My images') %></a></li>
+                            </ul>
+                        </div>
 % if (defined(config('broadcast_message'))) {
             <div class="alert alert-info">
                 <strong><%= config('broadcast_message') %></strong>
@@ -102,7 +109,7 @@
                     <div class="col-md-4" id="le-logiciel">
                         <h2><%= l('Le logiciel') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-cloud"></span></p>
-                        <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est une instance parmi d’autres du logiciel <a href="https://lut.im">Lutim</a> développé par <a href="http://www.fiat-tux.fr/">Luc Didry</a>.') %></p>
+                        <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est une instance parmi d’autres du logiciel <a href="https://lut.im">Lutim</a> développé par <a href="http://www.fiat-tux.fr/">Luc Didry</a>.') %><%= link_to 'https://liberapay.com/sky'    => (title => l('Support the author on Liberapay')) => begin %><img id="liberapay-img" src="/img/liberapay.svg" alt="<%= l('Liberapay button') %>"><% end %></p>
                         <p><%== l('Lutim est <a href="https://www.gnu.org/licenses/agpl-3.0.html">sous licence libre <abbr title="GNU Affero General Public License">AGPL</abbr></a>.') %></p>
                         <p><%== l('Les sources du thème <b class="violet">Frama</b><b class="vert">pic</b> sont disponibles sur <a href="https://framagit.org/framasoft/framapic">notre forge logicielle</a>') %></p>
                         <p><%== l('Il est possible d’utiliser <b class="violet">Frama</b><b class="vert">pic</b> sous forme d’application :') %></p>
