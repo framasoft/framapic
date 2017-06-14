@@ -39,6 +39,7 @@ img.ombre {
 #expiration label {
     font-weight: normal;
 }
+#delete-day { margin-left:5px; }
 
 #send-files, #send-url {
     margin-top:15px;
