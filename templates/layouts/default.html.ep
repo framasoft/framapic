@@ -21,23 +21,25 @@
         <link rel="apple-touch-icon" sizes="120x120" href="<%= url_for('/img/lutim120.png') %>">
         <link rel="apple-touch-icon" sizes="152x152" href="<%= url_for('/img/lutim152.png') %>">
         <link rel="apple-touch-icon-precomposed" sizes="128x128" href="<%= url_for('/img/lutim128.png') %>">
+        %= stylesheet '/css/bootstrap.min.css'
+        %= stylesheet '/css/fontello-embedded.css'
+        %= stylesheet '/css/lutim.css'
 % if (current_route 'stats') {
-        %= asset 'stats.css'
-% } elsif (current_route 'about') {
-        %= asset 'about.css'
+        %= stylesheet '/css/morris-0.4.3.min.css'
 % } else {
-        %= asset 'index.css'
+        %= stylesheet '/css/animation.css'
+        %= stylesheet '/css/uploader.css'
+        %= stylesheet '/css/markdown.css'
 % }
 % if (current_route 'gallery') {
-        %= asset 'gallery.css'
-% }
-% if (!(current_route 'about')) {
-        %= javascript '/js/jquery-2.1.0.min.js'
+        %= stylesheet '/css/photoswipe.css'
+        %= stylesheet '/css/default-skin/default-skin.css'
 % }
         %= stylesheet '/css/pic.css'
+        %= javascript '/js/jquery-3.2.1.min.js'
         %= javascript '/js/pic.js'
     </head>
-        <body>
+    <body>
         %= javascript 'https://framasoft.org/nav/nav.js'
         <div class="container ombre">
             <header>
@@ -52,6 +54,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" id="nav-send-files"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> <%= l('Envoyer des fichiers') %></a></li>
                                 <li role="presentation" id="nav-send-url" ><a href="/#send-url"><i class="fa fa-fw fa-link"></i> <%= l('Envoyer depuis une URL') %></a></li>
+                                %= include 'partial/choose_lang'
                                 <li role="presentation" id="nav-myfiles" class="pull-right"><a href="/myfiles"><i class="fa fa-fw fa-history"></i> <%= l('My images') %></a></li>
                             </ul>
                         </div>
@@ -132,21 +135,27 @@
 % if (defined(config('piwik_img'))) {
         <img src="<%== config('piwik_img') %>" style="border:0" alt="">
 % }
+        %= javascript '/js/bootstrap.min.js'
 % if (current_route 'stats') {
-        %= asset 'stats.js'
+        %= javascript '/js/lutim.js'
+        %= javascript '/js/raphael-min.js'
+        %= javascript '/js/morris-0.4.3.min.js'
+        %= javascript '/js/stats.js'
 % } elsif (!(current_route 'about')) {
-        %= asset 'index.js'
+        %= javascript '/js/lutim.js'
+        %= javascript '/js/dmuploader.min.js'
 % }
 % if (current_route 'index') {
         %= javascript '/partial/common.js'
         %= javascript '/partial/lutim.js'
 % }
 % if (current_route 'gallery') {
-        %= javascript '/gallery/js/unitegallery.js'
-        %= javascript '/gallery/themes/tiles/ug-theme-tiles.js'
+        %= javascript '/js/photoswipe.min.js'
+        %= javascript '/js/photoswipe-ui-default.min.js'
         %= javascript '/js/jszip.min.js'
         %= javascript '/js/FileSaver.min.js'
         %= javascript '/partial/gallery.js'
+        %= javascript '/partial/lutim.js'
 % }
 % if (current_route 'myfiles') {
         %= javascript '/partial/common.js'

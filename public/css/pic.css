@@ -10,6 +10,9 @@ h1 {
 .lead {
     font-style:italic;
 }
+.ombre {
+    background-color: #FFF;
+}
 .container.ombre {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -133,12 +136,17 @@ h4 + hr {
 .icon-twitter {
     color: #11809E;
 }
-.icon-trash:before {
+/*.icon-trash:before {
     font: normal normal normal 12px/1 FontAwesome;
     content: "\f1f8";
-}
+}*/
 
 #liberapay-img {
     margin-top: 0px;
     width: 14px;
     height: 18px;
+}
+
+.container.no-overflow {
+    max-width: 100%;
+}
