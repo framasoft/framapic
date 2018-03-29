@@ -44,7 +44,7 @@
         <div class="container ombre">
             <header>
                 <h1><a class="link_nocol" href="<%= url_for('/') %>" title="<%=l 'homepage' %>"><b class="frama">Frama</b><b class="services">pic</b></a></h1>
-                <p class="lead"><%= l('Partagez des images de façon confidentielle') %></p>
+                <p class="lead"><%= l('Share images confidentially') %></p>
                  <hr class="trait" role="presentation" />
             </header>
             <main>
@@ -52,8 +52,8 @@
                     <div class="col-md-12">
                         <div role="tabpanel">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" id="nav-send-files"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> <%= l('Envoyer des fichiers') %></a></li>
-                                <li role="presentation" id="nav-send-url" ><a href="/#send-url"><i class="fa fa-fw fa-link"></i> <%= l('Envoyer depuis une URL') %></a></li>
+                                <li role="presentation" id="nav-send-files"><a href="/#send-files"><i class="fa fa-fw fa-send"></i> <%= l('Send files') %></a></li>
+                                <li role="presentation" id="nav-send-url" ><a href="/#send-url"><i class="fa fa-fw fa-link"></i> <%= l('Send from an URL') %></a></li>
                                 %= include 'partial/choose_lang'
                                 <li role="presentation" id="nav-myfiles" class="pull-right"><a href="/myfiles"><i class="fa fa-fw fa-history"></i> <%= l('My images') %></a></li>
                             </ul>
@@ -74,34 +74,34 @@
                 <hr role="presentation" />
                 <div class="row">
                     <div class="col-md-4" id="tuto-faq">
-                        <h2><%= l('Prise en main') %></h2>
+                        <h2><%= l('First steps') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-question-sign"></span></p>
                         <div id="aboutbox">
-                            <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est un service en ligne libre qui permet de partager des images de manière confidentielle.') %></p>
+                            <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> is a free (as in free speech) online service to share images in a confidential way.') %></p>
                             <ol>
-                                <li><%= l('Collez l’image à transmettre.') %></li>
-                                <li><%= l('Si besoin, définissez sa durée de conservation en ligne.') %></li>
-                                <li><%= l('Partagez ensuite avec vos correspondants le lien qui vous est donné.') %></li>
+                                <li><%= l('Paste the image to share.') %></li>
+                                <li><%= l('If needed you can choose a delay of online availability.') %></li>
+                                <li><%= l('Then share the link with whoever you wish.') %></li>
                             </ol>
-                            <p><%= l('Vos images sont chiffrées et stockées sur nos serveurs sans qu’il nous soit possible de les déchiffrer.') %></p>
-                            <p><%== l('Pour vous aider dans l’utilisation du logiciel, voici <a href="https://framatube.org/media/framapicmp4" data-toggle="modal" onclick="jQuery(\'#TutoVideo\').modal(\'show\'); return false;">un tutoriel vidéo</a> réalisé par <a href="http://arpinux.org/">arpinux</a>, artisan paysagiste de la distribution GNU/Linux pour débutant <a href="https://handylinux.org/">HandyLinux</a>.') %></p>
+                            <p><%= l('Your images are encrypted and hosted on our server and we have no means to decrypt them.') %></p>
+                            <p><%== l('If you need help to use this program, here is <a href="https://old.framatube.org/media/framapicmp4" data-toggle="modal" onclick="jQuery(\'#TutoVideo\').modal(\'show\'); return false;">a video tutorial</a> courtesy of <a href="http://arpinux.org/">arpinux</a>, a kind guide to newcomers on <a href="https://handylinux.org/">HandyLinux</a> GNU/Linux distro.') %></p>
 
     <!-- modale vidéo -->
     <div class="modal fade" id="TutoVideo" tabindex="-1" role="dialog" aria-labelledby="TutoVideoLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only"><%= l('Fermer') %></span></button>
-                    <h1 id="TutoVideoLabel"><%= l('Tutoriel vidéo') %></h1>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only"><%= l('Close') %></span></button>
+                    <h1 id="TutoVideoLabel"><%= l('Video tutorial') %></h1>
                 </div>
                 <div class="modal-body">
-                    <p><video controls="controls" preload="none" poster="https://framatube.org/images/media/989l.jpg" height="340" width="570">
-                        <source src="https://framatube.org/blip/framapic.mp4" type="video/mp4">
-                        <source src="https://framatube.org/blip/framapic.webm" type="video/webm">
+                    <p><video controls="controls" preload="none" poster="https://old.framatube.org/images/media/989l.jpg" height="340" width="570">
+                        <source src="https://old.framatube.org/blip/framapic.mp4" type="video/mp4">
+                        <source src="https://old.framatube.org/blip/framapic.webm" type="video/webm">
                     </video></p>
-                    <p>-&gt; <%== l('La <a href="https://framatube.org/blip/framapic.webm">vidéo au format webm</a>') %></p>
+                    <p>-&gt; <%== l('Watch <a href="https://old.framatube.org/blip/framapic.webm">the webm video</a>') %></p>
                </div>
-               <div class="modal-footer"><a href="#" class="btn btn-default" data-dismiss="modal"><%= l('Fermer') %></a></div>
+               <div class="modal-footer"><a href="#" class="btn btn-default" data-dismiss="modal"><%= l('Close') %></a></div>
            </div>
         </div>
     </div>
@@ -110,20 +110,18 @@
                     </div>
 
                     <div class="col-md-4" id="le-logiciel">
-                        <h2><%= l('Le logiciel') %></h2>
+                        <h2><%= l('The software') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-cloud"></span></p>
-                        <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> est une instance parmi d’autres du logiciel <a href="https://lut.im">Lutim</a> développé par <a href="http://www.fiat-tux.fr/">Luc Didry</a>.') %><%= link_to 'https://liberapay.com/sky'    => (title => l('Support the author on Liberapay')) => begin %><img id="liberapay-img" src="/img/liberapay.svg" alt="<%= l('Liberapay button') %>"><% end %></p>
-                        <p><%== l('Lutim est <a href="https://www.gnu.org/licenses/agpl-3.0.html">sous licence libre <abbr title="GNU Affero General Public License">AGPL</abbr></a>.') %></p>
-                        <p><%== l('Les sources du thème <b class="violet">Frama</b><b class="vert">pic</b> sont disponibles sur <a href="https://framagit.org/framasoft/framapic">notre forge logicielle</a>') %></p>
-                        <p><%== l('Il est possible d’utiliser <b class="violet">Frama</b><b class="vert">pic</b> sous forme d’application :') %></p>
-                        <p class="text-center"><a class="btn btn-default btn-xs" href="#" id="install-app"><img src="<%= url_for('/') %>img/rocket.png" alt=""> <%=l('Install webapp')%></a></p>
+                        <p><%== l('<b class="violet">Frama</b><b class="vert">pic</b> is derived from <a href="https://lut.im">Lutim</a> software created by <a href="https://fiat-tux.fr/">Luc Didry</a>.') %><%= link_to 'https://liberapay.com/sky' => (title => l('Support the author on Liberapay')) => begin %><img id="liberapay-img" src="/img/liberapay.svg" alt="<%= l('Liberapay button') %>"><% end %></p>
+                        <p><%== l('Lutim is licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html"> free <abbr title="GNU Affero General Public License">AGPL</abbr> license</a>.') %></p>
+                        <p><%== l('Original source of this theme <b class="violet">Frama</b><b class="vert">pic</b> is available on <a href="https://framagit.org/framasoft/framapic">this repository of ours</a>') %></p>
                     </div>
 
                     <div class="col-md-4" id="jardin">
-                        <h2><%= l('Cultivez votre jardin') %></h2>
+                        <h2><%= l('Grow your own') %></h2>
                         <p class="text-center" role="presentation"><span class="glyphicon glyphicon-tree-deciduous"></span></p>
-                        <p><%== l('Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href="https://framagit.org/luc/lutim">le site de développement</a>.') %></p>
-                        <p><%= l('Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :') %></p>
+                        <p><%== l('If you want to contribute to development, patch or suggest improvements or simply download, just hop on <a href="https://framagit.org/luc/lutim">Development site</a>.') %></p>
+                        <p><%= l('If you wish to install your own instance and be independent from the online service, we can help you on:') %></p>
                         <p class="text-center"><a href="http://framacloud.org/cultiver-son-jardin/installation-de-lutim/" class="btn btn-success"><span class="glyphicon glyphicon-tree-deciduous"></span> framacloud.org</a></p>
                     </div>
                 </div>
