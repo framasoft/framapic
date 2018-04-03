@@ -9,13 +9,15 @@
 %     oc    => 'Occitan',
 %     ru    => 'Русский',
 % };
+% my $lang = $self->languages;
+%    $lang =~ s/-(.*)/_\U$1/;
 <li class="dropdown pull-right">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
         <span class="icon-language" aria-hidden="true" title="<%= l('Language') %>"></span> <%= l('Language') %> <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" role="menu">
     % for my $i (@{$self->available_langs}) {
-        <li<%== ($i eq $self->languages) ? ' class="active"' : '' %>>
+        <li<%== ($i eq $lang) ? ' class="active"' : '' %>>
             <a href="<%= url_for('lang', l => $i) %>" class="set-lang"><%= $l->{$i} %></a>
         </li>
     % }
