@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-03-29 01:37+0000\n"
+"PO-Revision-Date: 2018-04-05 06:33+0000\n"
 "Last-Translator: Luc Didry <luc@framasoft.org>\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -95,6 +95,10 @@ msgstr ""
 "html\"> free <abbr title=\"GNU Affero General Public License\">AGPL</abbr> "
 "license</a>."
 
+#: templates/partial/pic.js.ep:29
+msgid "No"
+msgstr "No"
+
 #: templates/layouts/default.html.ep:117
 msgid ""
 "Original source of this theme <b class=\"violet\">Frama</b><b class="
@@ -140,6 +144,10 @@ msgid ""
 msgstr ""
 "Watch <a href=\"https://old.framatube.org/blip/framapic.webm\">the webm "
 "video</a>"
+
+#: templates/partial/pic.js.ep:27
+msgid "Yes"
+msgstr "Yes"
 
 #: templates/layouts/default.html.ep:86
 msgid ""

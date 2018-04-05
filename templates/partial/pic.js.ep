@@ -23,6 +23,11 @@ $(document).ready(function(){
                 }
             })
 
+            $('#myfiles tr .icon-ok').addClass('fa fa-check').attr('aria-hidden', true);
+            $('#myfiles tr .icon-ok').parent().append('<span class="sr-only"><%= l('Yes') %></span>');
+            $('#myfiles tr .icon-cancel').addClass('fa fa-times').attr('aria-hidden', true);
+            $('#myfiles tr .icon-cancel').parent().append('<span class="sr-only"><%= l('No') %></span>');
+
             // Lien de suppression
             $('#myfiles tr td:nth-child(8) a').html(function(){
                 return '<i class="fa fa-fw fa-trash text-danger"></i><span class="sr-only">'+$(this).attr('href')+'</span>';

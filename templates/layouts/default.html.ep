@@ -37,7 +37,7 @@
 % }
         %= stylesheet '/css/pic.css'
         %= javascript '/js/jquery-3.2.1.min.js'
-        %= javascript '/js/pic.js'
+        %= javascript '/partial/pic.js'
     </head>
     <body>
         %= javascript 'https://framasoft.org/nav/nav.js'

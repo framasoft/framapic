@@ -6,8 +6,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-03-29 01:50+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"PO-Revision-Date: 2018-04-05 06:34+0000\n"
+"Last-Translator: Luc Didry <luc@framasoft.org>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -95,6 +95,10 @@ msgstr ""
 "licence libre <abbr title=\"GNU Affero General Public License\">AGPL</abbr></"
 "a>."
 
+#: templates/partial/pic.js.ep:29
+msgid "No"
+msgstr "Non"
+
 #: templates/layouts/default.html.ep:117
 msgid ""
 "Original source of this theme <b class=\"violet\">Frama</b><b class="
@@ -140,6 +144,10 @@ msgid ""
 msgstr ""
 "La <a href=\"https://old.framatube.org/blip/framapic.webm\">vidéo au format "
 "webm</a>"
+
+#: templates/partial/pic.js.ep:27
+msgid "Yes"
+msgstr "Oui"
 
 #: templates/layouts/default.html.ep:86
 msgid ""
