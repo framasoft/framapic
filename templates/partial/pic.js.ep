@@ -19,7 +19,7 @@ $(document).ready(function(){
                 if($(this).parent().parent('tr').find('td:eq(4) .icon-ok').length) {
                     return '<i class="fa fa-fw fa-eye"></i><span class="sr-only">'+$(this).attr('href')+'</span>';
                 } else {
-                    return '<img src="'+$(this).attr('href')+'" alt="'+$(this).attr('href')+'"/>';
+                    return '<img src="'+$(this).attr('href')+'?width=200" alt="'+$(this).attr('href')+'"/>';
                 }
             })
 
