@@ -24,13 +24,9 @@ $(document).ready(function(){
                 }
             })
 
-            $('#myfiles tr .icon-ok').addClass('fa fa-check').attr('aria-hidden', true);
             $('#myfiles tr .icon-ok').parent().append('<span class="sr-only"><%= l('Yes') %></span>');
-            $('#myfiles tr .icon-cancel').addClass('fa fa-times').attr('aria-hidden', true);
             $('#myfiles tr .icon-cancel').parent().append('<span class="sr-only"><%= l('No') %></span>');
-            $('#myfiles tr .icon-clipboard').addClass('fa fa-clipboard').attr('aria-hidden', true);
             $('#myfiles tr .icon-clipboard').parent().append('<span class="sr-only"><%= l('Copy to clipboard') %></span>');
-            $('#myfiles tr .icon-edit').addClass('fa fa-pencil-square-o').attr('aria-hidden', true);
             $('#myfiles tr .icon-edit').parent().append('<span class="sr-only"><%= l('Modify expiration delay') %></span>');
 
             // Lien de suppression
