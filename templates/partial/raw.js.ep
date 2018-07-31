@@ -1,0 +1,34 @@
+var enabled_donut = {
+  element: 'raw-enabled-holder',
+  data: [
+    {label: "<%= l('no time limit') %>", value: 2},
+    {label: "<%= l('24 hours') %>", value: 0},
+    {label: "<%= l('%1 days', 7) %>", value: 0},
+    {label: "<%= l('%1 days', 30) %>", value: 0},
+    {label: "<%= l('1 year') %>", value: 0},
+  ],
+  colors: [
+      '#40b489',
+      '#40b9b1',
+      '#40a1be',
+      '#427dc1',
+      '#455ac3',
+  ]
+};
+var disabled_donut = {
+  element: 'raw-disabled-holder',
+  data: [
+    {label: "<%= l('no time limit') %>", value: 4},
+    {label: "<%= l('24 hours') %>", value: 0},
+    {label: "<%= l('%1 days', 7) %>", value: 0},
+    {label: "<%= l('%1 days', 30) %>", value: 0},
+    {label: "<%= l('1 year') %>", value: 0},
+  ],
+  colors: [
+      '#40b489',
+      '#40b9b1',
+      '#40a1be',
+      '#427dc1',
+      '#455ac3',
+  ]
+};

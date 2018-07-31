@@ -1,0 +1,35 @@
+% my @raw = (
+%     l('Image delay'),
+%     l('Active images'),
+%     l('Deleted images'),
+%     l('Deleted images in 30 days'),
+%     l('no time limit'),
+%     l('24 hours'),
+%     l('%1 days', 7),
+%     l('%1 days', 30),
+%     l('1 year'),
+%     l('Total')
+% );
+<table class="table table-striped" id="raw-stats">
+    <thead>
+        <tr>
+            <th><%= $raw[0] %></%=></th>
+            <th><%= $raw[1] %></%=></th>
+            <th><%= $raw[2] %></%=></th>
+            <th><%= $raw[3] %></%=></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+<tr><td><%= $raw[4] %></%=></td><td>2</td><td>4</td><td>ø</td></tr>
+<tr><td><%= $raw[5] %></%=></td><td>0</td><td>0</td><td>0 (100%)</td></tr>
+<tr><td><%= $raw[6] %></%=></td><td>0</td><td>0</td><td>0 (100%)</td></tr>
+<tr><td><%= $raw[7] %></%=></td><td>0</td><td>0</td><td>0 (100%)</td></tr>
+<tr><td><%= $raw[8] %></%=></td><td>0</td><td>0</td><td>0</td></tr>
+</tbody>
+    <tfoot>
+    
+<tr><td><%= $raw[9] %></%=></td><td>2</td><td>4</td><td>0</td></tr>
+</tfoot>
+</table>
+

@@ -1,0 +1,17 @@
+<div id="stats-data">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+            <th>24/7/2018</th>
+</tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>6</td>
+</tr>
+            <tr>
+            <td>6</td>
+</tr>
+        </tbody>
+    </table>
+</div>
