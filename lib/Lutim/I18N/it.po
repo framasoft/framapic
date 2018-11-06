@@ -1,4 +1,4 @@
-# Luc Didry <luc@framasoft.org>, 2018. #zanata
+# roberto marcolin <nilogadda@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -6,10 +6,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-05 06:33+0000\n"
-"Last-Translator: Luc Didry <luc@framasoft.org>\n"
-"Language-Team: English\n"
-"Language: en\n"
+"PO-Revision-Date: 2018-08-01 09:43+0000\n"
+"Last-Translator: roberto marcolin <nilogadda@gmail.com>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
@@ -18,8 +18,8 @@ msgid ""
 "<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> is a free (as in free "
 "speech) online service to share images in a confidential way."
 msgstr ""
-"<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> is a free (as in free "
-"speech) online service to share images in a confidential way."
+"<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> è un servizio online "
+"libero (as in free speech) per condividere immagini in modo riservato."
 
 #: templates/layouts/default.html.ep:115
 msgid ""
@@ -27,25 +27,25 @@ msgid ""
 "href=\"https://lut.im\">Lutim</a> software created by <a href=\"https://fiat-"
 "tux.fr/\">Luc Didry</a>."
 msgstr ""
-"<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> is derived from <a "
-"href=\"https://lut.im\">Lutim</a> software created by <a href=\"https://fiat-"
+"<b class=\"violet\">Frama</b><b class=\"vert\">pic</b> deriva da <a href="
+"\"https://lut.im\">Lutim</a> un software creato da <a href=\"https://fiat-"
 "tux.fr/\">Luc Didry</a>."
 
 #: templates/layouts/default.html.ep:104 templates/layouts/default.html.ep:94
 msgid "Close"
-msgstr "Close"
+msgstr "Chiudi"
 
 #: templates/layouts/default.html.ep:77
 msgid "First steps"
-msgstr "First steps"
+msgstr "Primi passi"
 
 #: templates/layouts/default.html.ep:121
 msgid "Grow your own"
-msgstr "Grow your own"
+msgstr "Coltiva il tuo giardino"
 
 #: templates/layouts/default.html.ep:83
 msgid "If needed you can choose a delay of online availability."
-msgstr "If needed you can choose a delay of online availability."
+msgstr "Se necessario puoi scegliere un limite per la disponibilità online"
 
 #: templates/layouts/default.html.ep:87
 msgid ""
@@ -56,12 +56,12 @@ msgid ""
 "newcomers on <a href=\"https://handylinux.org/\">HandyLinux</a> GNU/Linux "
 "distro."
 msgstr ""
-"If you need help to use this program, here is <a href=\"https://old."
-"framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick="
-"\"jQuery('#TutoVideo').modal('show'); return false;\">a video tutorial</a> "
-"courtesy of <a href=\"http://arpinux.org/\">arpinux</a>, a kind guide to "
-"newcomers on <a href=\"https://handylinux.org/\">HandyLinux</a> GNU/Linux "
-"distro."
+"Se hai bisogno di aiuto per usare questo programma, ecco <a href=\"https://"
+"old.framatube.org/media/framapicmp4\" data-toggle=\"modal\" onclick="
+"\"jQuery('#TutoVideo').modal('show'); return false;\">un  video tutorial</a> "
+"courtesy of <a href=\"http://arpinux.org/\">arpinux</a>, una guida per "
+"principiantis su <a href=\"https://handylinux.org/\">HandyLinux</a> GNU/"
+"Linux distro."
 
 #: templates/layouts/default.html.ep:123
 msgid ""
@@ -69,21 +69,21 @@ msgid ""
 "simply download, just hop on <a href=\"https://framagit.org/luc/"
 "lutim\">Development site</a>."
 msgstr ""
-"If you want to contribute to development, patch or suggest improvements or "
-"simply download, just hop on <a href=\"https://framagit.org/luc/"
-"lutim\">Development site</a>."
+"Se vuoi contribuire allo sviluppo, all'aggiornamento o suggerire "
+"miglioramenti o semplicemente fare il download, basta andare su <a href="
+"\"https://framagit.org/luc/lutim\">Development site</a>."
 
 #: templates/layouts/default.html.ep:124
 msgid ""
 "If you wish to install your own instance and be independent from the online "
 "service, we can help you on:"
 msgstr ""
-"If you wish to install your own instance and be independent from the online "
-"service, we can help you on:"
+"Se vuoi installare una tua istanza ed essere indipendente dal servizio "
+"online, possiamo aiutarti in:"
 
 #: templates/layouts/default.html.ep:115
 msgid "Liberapay button"
-msgstr "Liberapay button"
+msgstr "Pulsante Liberapay "
 
 #: templates/layouts/default.html.ep:116
 msgid ""
@@ -91,9 +91,9 @@ msgid ""
 "html\"> free <abbr title=\"GNU Affero General Public License\">AGPL</abbr> "
 "license</a>."
 msgstr ""
-"Lutim is licensed under <a href=\"https://www.gnu.org/licenses/agpl-3.0."
-"html\"> free <abbr title=\"GNU Affero General Public License\">AGPL</abbr> "
-"license</a>."
+"Lutim è distribuito con licenza <a href=\"https://www.gnu.org/licenses/agpl-"
+"3.0.html\"> free <abbr title=\"GNU Affero General Public License\">AGPL</"
+"abbr> license</a>."
 
 #: templates/partial/pic.js.ep:29
 msgid "No"
@@ -105,33 +105,33 @@ msgid ""
 "\"vert\">pic</b> is available on <a href=\"https://framagit.org/framasoft/"
 "framapic\">this repository of ours</a>"
 msgstr ""
-"Original source of this theme <b class=\"violet\">Frama</b><b class="
-"\"vert\">pic</b> is available on <a href=\"https://framagit.org/framasoft/"
-"framapic\">this repository of ours</a>"
+"Il sorgente originale di questo tema <b class=\"violet\">Frama</b><b class="
+"\"vert\">pic</b> è disponibile  nel<a href=\"https://framagit.org/framasoft/"
+"framapic\">nostro repository </a>"
 
 #: templates/layouts/default.html.ep:82
 msgid "Paste the image to share."
-msgstr "Paste the image to share."
+msgstr "Copia l'immagine da condividere."
 
 #: templates/layouts/default.html.ep:55
 msgid "Send files"
-msgstr "Send files"
+msgstr "Invia i file"
 
 #: templates/layouts/default.html.ep:56
 msgid "Send from an URL"
-msgstr "Send from an URL"
+msgstr "Invia da URL"
 
 #: templates/layouts/default.html.ep:47
 msgid "Share images confidentially"
-msgstr "Share images confidentially"
+msgstr "Condividi le immagini in modo riservato"
 
 #: templates/layouts/default.html.ep:113
 msgid "The software"
-msgstr "The software"
+msgstr "Il software"
 
 #: templates/layouts/default.html.ep:84
 msgid "Then share the link with whoever you wish."
-msgstr "Then share the link with whoever you wish."
+msgstr "Poi condividi il link con chi vuoi."
 
 #: templates/layouts/default.html.ep:95
 msgid "Video tutorial"
@@ -142,17 +142,17 @@ msgid ""
 "Watch <a href=\"https://old.framatube.org/blip/framapic.webm\">the webm "
 "video</a>"
 msgstr ""
-"Watch <a href=\"https://old.framatube.org/blip/framapic.webm\">the webm "
-"video</a>"
+"Guarda <a href=\"https://old.framatube.org/blip/framapic.webm\">il video "
+"webm </a>"
 
 #: templates/partial/pic.js.ep:27
 msgid "Yes"
-msgstr "Yes"
+msgstr "Sì"
 
 #: templates/layouts/default.html.ep:86
 msgid ""
 "Your images are encrypted and hosted on our server and we have no means to "
 "decrypt them."
 msgstr ""
-"Your images are encrypted and hosted on our server and we have no means to "
-"decrypt them."
+"Le tue immagini sono crittate e salvate sul nostro server e non abbiamo modo "
+"di decrittarle."
