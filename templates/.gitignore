@@ -1,0 +1,4 @@
+templates/stats.json.ep
+templates/raw.html.ep
+templates/partial/raw.js.ep
+templates/data.html.ep
