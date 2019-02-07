@@ -88,11 +88,10 @@
                     <h1 id="TutoVideoLabel"><%= l('Video tutorial') %></h1>
                 </div>
                 <div class="modal-body">
-                    <p><video controls="controls" preload="none" poster="https://old.framatube.org/images/media/989l.jpg" height="340" width="570">
-                        <source src="https://old.framatube.org/blip/framapic.mp4" type="video/mp4">
-                        <source src="https://old.framatube.org/blip/framapic.webm" type="video/webm">
-                    </video></p>
-                    <p>-&gt; <%== l('Watch <a href="https://old.framatube.org/blip/framapic.webm">the webm video</a>') %></p>
+                    <iframe width="560" height="315" sandbox="allow-same-origin allow-scripts"
+                      src="https://framatube.org/videos/embed/bdd3a489-8ecb-4722-8910-27303b0299f4"
+                      frameborder="0" allowfullscreen>
+                    </iframe>
                </div>
                <div class="modal-footer"><a href="#" class="btn btn-default" data-dismiss="modal"><%= l('Close') %></a></div>
            </div>
